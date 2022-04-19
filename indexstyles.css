@@ -1,0 +1,15 @@
+a
+{
+    text-decoration: none;
+    color: blue;
+}
+a:hover 
+{
+    text-decoration: underline;
+    color: red;
+}
+body
+{
+    text-align: center;
+    font-size: 100px;
+}
