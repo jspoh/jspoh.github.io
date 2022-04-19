@@ -13,3 +13,7 @@ body
     text-align: center;
     font-size: 100px;
 }
+::selection
+{
+    background-color: #fcbf49;
+}
