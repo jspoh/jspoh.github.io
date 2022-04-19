@@ -1,0 +1,28 @@
+h1.hname
+{
+    text-align: center;
+}
+img.portrait
+{
+    width: 150px;
+    border-radius: 0px;
+    float: right;
+    margin-right: 10px;
+    margin-top: -70px;
+}
+h2.sect
+{
+    text-decoration: underline;
+}
+p.edu
+{
+    margin-left: 200px;
+}
+p.edu_present
+{
+    margin-left: 186px;
+}
+div.flex
+{
+    display: flex;
+}
