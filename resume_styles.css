@@ -36,3 +36,7 @@ a:hover
     color: red;
     text-decoration: underline;
 }
+::selection
+{
+    background-color: #fcbf49;
+}
