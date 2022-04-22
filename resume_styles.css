@@ -40,3 +40,10 @@ a:hover
 {
     background-color: #fcbf49;
 }
+body
+{
+   /*background-image: url(https://wallpaperaccess.com/full/656336.png); 
+   background-repeat: no-repeat;
+   background-size: cover;*/
+   background-color: lightgray;
+}
