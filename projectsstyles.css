@@ -1,6 +1,9 @@
-* { padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
 body
 {
+   background-image: url(https://wallpaperaccess.com/full/656336.png); 
+   background-repeat: no-repeat;
+   background-size: cover;
    flex-wrap: wrap;
    font-family: 'Times New Roman', Times, serif;
 }
@@ -8,7 +11,6 @@ body
 {
     background-color: #fcbf49;
 }
-
 /* HEADER STYLES*/
 header
 {
@@ -83,52 +85,3 @@ a.main:active{
     background-color: coral;
 }
 /* end of header stuff*/
-h1.hname
-{
-    text-align: center;
-}
-img.portrait
-{
-    width: 150px;
-    border-radius: 0px;
-    float: right;
-    margin-right: 10px;
-    margin-top: -70px;
-}
-h2.sect
-{
-    text-decoration: underline;
-}
-p.edu
-{
-    margin-left: 200px;
-}
-p.edu_present
-{
-    margin-left: 186px;
-}
-div.flex
-{
-    display: flex;
-}
-a
-{
-    text-decoration: none;
-    color: blue;
-}
-a:hover
-{
-    color: red;
-    text-decoration: underline;
-}
-::selection
-{
-    background-color: #fcbf49;
-}
-body
-{
-   /*background-image: url(https://wallpaperaccess.com/full/656336.png); 
-   background-repeat: no-repeat;
-   background-size: cover;*/
-   background-color: lightgray;
-}
