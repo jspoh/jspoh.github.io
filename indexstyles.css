@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box;}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
 body
 {
    background-image: url(https://wallpaperaccess.com/full/656336.png); 
@@ -6,49 +6,6 @@ body
    background-size: cover;
    flex-wrap: wrap;
    font-family: 'Times New Roman', Times, serif;
-}
-header
-{
-    display: flex;
-    justify-content: center;
-
-    flex-wrap: wrap; /*wrapping for small screens eg. phones*/
-
-    background-color: lightcoral;
-}
-header a
-{
-    font-weight: 700;
-    font-size: 32px;
-    padding: 3%;
-    color: white;
-}
-header a.current
-{
-    color: peachpuff;
-    font-size: 32px;
-}
-header a:hover
-{
-    text-decoration: none;
-    color: peachpuff;
-    /*
-    border: 1px solid peachpuff;
-    border-radius: 10%;
-    box-sizing: border-box;
-    */
-    font-size: 33px;
-    transform: scale(1.2);
-}
-a
-{
-    text-decoration: none;
-    color: blue;
-}
-a:hover 
-{
-    text-decoration: underline;
-    color: red;
 }
 ::selection
 {
@@ -121,7 +78,7 @@ p.details
 }
 footer
 {
-    margin-top: 200px;
+    margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.3);
 }
 footer a img
@@ -174,3 +131,73 @@ img.interest_pic
     margin-top: 100px;
     width: 1000px;
 }
+/* HEADER STYLES*/
+header
+{
+    display: flex;
+    justify-content: space-around;
+    width: 80%; /*to use up more of the center space*/
+    margin: auto; /*re-center it*/
+
+    flex-wrap: wrap; /*wrapping for small screens eg. phones*/
+
+    background-color: lightcoral;
+    height: 15vh;
+    align-items: center;
+}
+a.main{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+a.main:active{
+    color: peachpuff;
+}
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown_content {
+    margin-top: 0px; /*do not assign margin top*/
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: all 0.4s ease;
+    transform: translateY(-10px);
+  }
+  
+  .dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown_content a:hover {
+      background-color: #dddddd;
+    }
+  
+  .dropdown:hover .dropdown_content {
+      opacity: 1;
+      pointer-events:all;transform: 
+      translateY(0px);
+    }
+  
+  .dropdown:hover .dropbtn{
+      background-color: coral;
+      transform: scale(1.05);
+    }
