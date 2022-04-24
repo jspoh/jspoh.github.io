@@ -1,4 +1,4 @@
-* { padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+* {box-sizing: border-box; scroll-behavior: smooth;} /*padding messes with lists*/
 body
 {
    font-family: 'Times New Roman', Times, serif;
@@ -128,4 +128,7 @@ body
    background-repeat: no-repeat;
    background-size: cover;*/
    background-color: lightgray;
+}
+ul {
+    pading: 8px;
 }
