@@ -87,3 +87,16 @@ a.main:active{
     background-color: coral;
 }
 /* end of header stuff*/
+/*back to top button*/
+button.btt{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px;
+    background-color: rgba(49, 50, 49, 0.8);
+}
+button.btt a{
+    text-decoration: none;
+    color: white;
+}
+/*end of back to top button*/
