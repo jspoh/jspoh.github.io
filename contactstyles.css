@@ -4,7 +4,6 @@ body
    background-image: url(https://wallpaperaccess.com/full/656336.png); 
    background-repeat: no-repeat;
    background-size: cover;
-   flex-wrap: wrap;
    font-family: 'Times New Roman', Times, serif;
 }
 ::selection
@@ -18,8 +17,6 @@ header
     justify-content: space-around;
     width: 80%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
-
-    flex-wrap: wrap; /*wrapping for small screens eg. phones*/
 
     background-color: lightcoral;
     height: 15vh;
