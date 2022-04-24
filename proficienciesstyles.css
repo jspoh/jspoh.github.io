@@ -95,3 +95,24 @@ button.btt a{
     color: white;
 }
 /*end of back to top button*/
+p.info_text
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 100;
+
+    border: 1px solid #fcbf49;
+    background-color: rgba(200, 220, 250, 0.3);
+    width: 800px; 
+    padding: 50px;
+    margin: auto;
+    
+    margin-top: 100px;
+}
+img
+{
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    width: 1000px;
+}
