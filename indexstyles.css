@@ -1,4 +1,7 @@
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth;}
 body
 {
    background-image: url(https://wallpaperaccess.com/full/656336.png); 
@@ -102,6 +105,7 @@ h1
     text-align: center;
     font-size: 50px;
     color: #001219;
+    text-decoration: underline;
 
     width: 100%;
     margin: auto;
@@ -176,7 +180,7 @@ footer a img
 }
 footer p
 {
-    margin-left: 80%;
+    margin-left: 75%;
     position: relative;
     bottom: 0px;
     right: 0px;
@@ -210,6 +214,14 @@ p.info_text
     
     margin-top: 100px;
 }
+a.hlink {
+    text-decoration: none;
+    color: blue;
+}
+a.hlink:hover {
+    text-decoration: underline;
+    color: red;
+}
 img.interest_pic
 {
     display: block;
@@ -230,4 +242,13 @@ form button{
     margin-top: 20px;
     padding: 5px 20px;
     background-color: transparent;
+}
+.flex {
+    display: flex;
+    margin: auto;
+}
+span {
+    font-size: 12px;
+    position: relative;
+    margin-left: 13px;
 }
