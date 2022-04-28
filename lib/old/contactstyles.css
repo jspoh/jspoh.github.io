@@ -1,12 +1,9 @@
-/* do not use*/
-
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
 body
 {
    background-image: url(https://wallpaperaccess.com/full/656336.png); 
    background-repeat: no-repeat;
    background-size: cover;
-   flex-wrap: wrap;
    font-family: 'Times New Roman', Times, serif;
 }
 ::selection
@@ -20,8 +17,6 @@ header
     justify-content: space-around;
     width: 80%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
-
-    flex-wrap: wrap; /*wrapping for small screens eg. phones*/
 
     background-color: lightcoral;
     height: 15vh;
@@ -87,38 +82,17 @@ a.main:active{
     background-color: coral;
 }
 /* end of header stuff*/
-/*back to top button*/
-button.btt{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    padding: 5px;
-    background-color: rgba(49, 50, 49, 0.8);
-}
-button.btt a{
-    text-decoration: none;
-    color: white;
-}
-/*end of back to top button*/
-/*footer stuff*/
-footer
-{
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-footer a img
-{
-    width: 40px;
-    position: relative;
-    bottom: 15px;
-    left: 10px;
-}
-footer p
-{
-    margin-left: 80%;
-    position: relative;
-    bottom: 0px;
-    right: 0px;
+.eform{
+    text-align: left;
+
+    background-color: rgba(221, 221, 221, 0.5);
     width: fit-content;
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
 }
-/*end of footer stuff*/
+form button{
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: transparent;
+}

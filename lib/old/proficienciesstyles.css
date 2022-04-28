@@ -10,7 +10,6 @@ body
 {
     background-color: #fcbf49;
 }
-
 /* HEADER STYLES*/
 header
 {
@@ -96,106 +95,6 @@ button.btt a{
     color: white;
 }
 /*end of back to top button*/
-
-h1
-{
-    text-align: center;
-    font-size: 50px;
-    color: #001219;
-
-    width: 100%;
-    margin: auto;
-}
-p img#intro_pic
-{
-    display: block;
-    width: 75%;
-    height: 800px;
-    object-fit: cover; /*for cropping image*/
-    margin: auto;
-}
-p.left
-{
-    color: #ffbe0b;
-    font-size: 35px;
-
-    position: relative;
-    width: fit-content;
-    bottom: 450px;
-    left: 250px;
-
-    background-color: rgba(108, 117, 125, 0.8);
-}
-div.info
-{
-    display: flex;
-    margin-top: 50px;
-}
-p.topic
-{
-    text-align: center;
-
-    font-size: 50px;
-    font-weight: 700;
-    width: 50%;
-
-    position: relative;
-    top: 180px;
-    left: 250px;
-}
-p.details
-{
-    font-size: 24px;
-
-    text-align: left;
-    margin-left: 30%;
-    margin-right: 10%;
-    padding: 100px;
-
-    width: 150%;
-    height: 50%;
-
-    background-color: rgba(0, 77, 102, 0.5);
-
-    box-sizing: border-box;
-    border: 1px solid #fcbf49;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-}
-footer
-{
-    margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-footer a img
-{
-    width: 40px;
-    position: relative;
-    bottom: 15px;
-    left: 10px;
-}
-footer p
-{
-    margin-left: 80%;
-    position: relative;
-    bottom: 0px;
-    right: 0px;
-    width: fit-content;
-}
-.margin
-{
-    margin-top: 50px;
-}
-h2
-{
-    margin-top: 50px;
-    margin-left: 150px;
-    text-decoration: underline;
-    width: fit-content;
-    padding: 20px;
-    background-color: rgba(250, 235, 215, 0.5);
-    color: chocolate;
-}
 p.info_text
 {
     text-align: center;
@@ -210,24 +109,10 @@ p.info_text
     
     margin-top: 100px;
 }
-img.interest_pic
+img
 {
     display: block;
     margin: auto;
     margin-top: 100px;
     width: 1000px;
-}
-.eform{
-    text-align: left;
-
-    background-color: rgba(221, 221, 221, 0.5);
-    width: fit-content;
-    margin: auto;
-    margin-top: 100px;
-    padding: 30px;
-}
-form button{
-    margin-top: 20px;
-    padding: 5px 20px;
-    background-color: transparent;
 }
