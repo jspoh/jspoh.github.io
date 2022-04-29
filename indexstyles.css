@@ -10,7 +10,7 @@ body
    background-repeat: no-repeat;
    background-size: cover;
    */
-   background-color: #003049;
+   background-color: #003654;
    color: #bdbdbd;
    font-family: 'Ubuntu', sans-serif;
 }
@@ -39,7 +39,7 @@ a.main{
     color: white;
     font-weight: 700;
     font-size: 24px;
-}
+}   
 a.main:active{
     color: peachpuff;
 }
