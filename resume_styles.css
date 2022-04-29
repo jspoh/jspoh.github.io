@@ -11,12 +11,15 @@ body
 /* HEADER STYLES*/
 header
 {
+    /*position: sticky;
+    top: 0px;*/
+
     display: flex;
     justify-content: space-around;
-    width: 80%; /*to use up more of the center space*/
+    width: 100%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
 
-    background-color: lightcoral;
+    background-color: #001d3d;
     height: 15vh;
     align-items: center;
 }
@@ -51,7 +54,7 @@ a.main:active{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   transform: translateY(-10px);
 }
 
@@ -73,11 +76,12 @@ a.main:active{
 }
 
 .dropdown:hover .dropbtn{
-    background-color: coral;
+    background-color: #457b9d;
     transform: scale(1.05);
+    transition: all 1.5s ease;
 }
 .current{
-    background-color: coral;
+    background-color: #457b9d;
 }
 /* end of header stuff*/
 h1.hname
@@ -122,6 +126,7 @@ body
 a.hlink {
     color: blue;
     text-decoration: none;
+    transition: all 0.5s ease;
 }
 a.hlink:hover {
     color: red;

@@ -1,28 +1,36 @@
 * { margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    scroll-behavior: smooth;}
+    scroll-behavior: smooth;
+}
 body
 {
+    /* image background
    background-image: url(https://wallpaperaccess.com/full/656336.png); 
    background-repeat: no-repeat;
    background-size: cover;
-   font-family: 'Times New Roman', Times, serif;
+   */
+   background-color: #003049;
+   color: #bdbdbd;
+   font-family: 'Ubuntu', sans-serif;
 }
 ::selection
 {
-    background-color: #fcbf49;
+    background-color: #332600;
 }
 
 /* HEADER STYLES*/
 header
 {
+    /*position: sticky;
+    top: 0px;*/
+
     display: flex;
     justify-content: space-around;
-    width: 80%; /*to use up more of the center space*/
+    width: 100%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
 
-    background-color: lightcoral;
+    background-color: #001d3d;
     height: 15vh;
     align-items: center;
 }
@@ -41,6 +49,7 @@ a.main:active{
     padding: 16px;
     font-size: 16px;
     border: none;
+    transition: all 1.5s ease;
 }
 
 .dropdown {
@@ -57,7 +66,7 @@ a.main:active{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   transform: translateY(-10px);
 }
 
@@ -79,11 +88,12 @@ a.main:active{
 }
 
 .dropdown:hover .dropbtn{
-    background-color: coral;
+    background-color: #457b9d;
     transform: scale(1.05);
+    transition: all 1.5s ease;
 }
 .current{
-    background-color: coral;
+    background-color: #457b9d;
 }
 /* end of header stuff*/
 /*back to top button*/
@@ -91,21 +101,34 @@ button.btt{
     position: fixed;
     right: 20px;
     bottom: 20px;
-    padding: 5px;
+    padding: 7px;
     background-color: rgba(49, 50, 49, 0.8);
+    cursor: pointer;
+
+    border: 1px solid black;
+    border-radius: 20%;
+}
+button.btt:hover {
+    transform: translateY(-1px);
+    background-color: #878787;
+    box-shadow: 0 0.5em 0.5em -0.4em #514040;
+
+    transition: all 0.2s;
 }
 button.btt a{
     text-decoration: none;
     color: white;
 }
 /*end of back to top button*/
-
+.cursive {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .5em;
+}
 h1
 {
     text-align: center;
     font-size: 50px;
-    color: #001219;
-    text-decoration: underline;
+    padding: 1em;
 
     width: 100%;
     margin: auto;
@@ -125,8 +148,8 @@ p.left
 
     position: relative;
     width: fit-content;
-    bottom: 450px;
-    left: 250px;
+    bottom: 13em;
+    left: 7.2em;
 
     background-color: rgba(108, 117, 125, 0.8);
 }
@@ -141,11 +164,10 @@ p.topic
 
     font-size: 50px;
     font-weight: 700;
-    width: 50%;
 
     position: relative;
-    top: 180px;
-    left: 250px;
+    top: 3.5em;
+    left: 5em;
 }
 p.details
 {
@@ -159,7 +181,7 @@ p.details
     width: 150%;
     height: 50%;
 
-    background-color: rgba(0, 77, 102, 0.5);
+    background-color: #3a0ca355;
 
     box-sizing: border-box;
     border: 1px solid #fcbf49;
@@ -169,7 +191,7 @@ p.details
 footer
 {
     margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 footer a img
 {
@@ -194,11 +216,13 @@ h2
 {
     margin-top: 50px;
     margin-left: 150px;
-    text-decoration: underline;
+    border-radius: 20%;
+    letter-spacing: .2em !important;
+    font-weight: 700;;
     width: fit-content;
     padding: 20px;
     background-color: rgba(250, 235, 215, 0.5);
-    color: chocolate;
+    color: rgb(169, 70, 0);
 }
 p.info_text
 {
@@ -206,11 +230,12 @@ p.info_text
     font-size: 24px;
     font-weight: 100;
 
-    border: 1px solid #fcbf49;
-    background-color: rgba(200, 220, 250, 0.3);
+    border: 2px solid #fcbf49;
+    background-color: #3a0ca355;
     width: 800px; 
     padding: 50px;
     margin: auto;
+    border-radius: 10%;
     
     margin-top: 100px;
 }
@@ -231,8 +256,10 @@ img.interest_pic
 }
 .eform{
     text-align: left;
-
-    background-color: rgba(221, 221, 221, 0.5);
+    border: 1px solid #fcbf49;
+    background-color: #118ab2;
+    color: black;
+    font-weight: 700;
     width: fit-content;
     margin: auto;
     margin-top: 100px;
@@ -241,7 +268,14 @@ img.interest_pic
 form button{
     margin-top: 20px;
     padding: 5px 20px;
-    background-color: transparent;
+    background-color: #003049;
+    color: white;
+    border: 1px solid #fcbf49;
+    transition: all 0.5s ease;
+}
+form button:hover {
+    transition: all 0.5s ease;
+    background-color: #004e77;
 }
 .flex {
     display: flex;
