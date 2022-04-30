@@ -13,6 +13,7 @@ body
    background-color: #003654;
    color: #bdbdbd;
    font-family: 'Ubuntu', sans-serif;
+   font-size: 16px; /*default font size*/
 }
 ::selection
 {
@@ -38,7 +39,7 @@ a.main{
     text-decoration: none;
     color: white;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5em;
 }   
 a.main:active{
     color: peachpuff;
@@ -46,8 +47,8 @@ a.main:active{
 .dropbtn {
     background-color: transparent;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 1em;
+    font-size: 1em;
     border: none;
     transition: all 1.5s ease;
 }
@@ -63,7 +64,7 @@ a.main:active{
   pointer-events: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 10em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   transition: all 0.5s ease;
@@ -99,9 +100,9 @@ a.main:active{
 /*back to top button*/
 button.btt{
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    padding: 7px;
+    right: 1.25em;
+    bottom: 1.25em;
+    padding: 0.4375em;
     background-color: rgba(49, 50, 49, 0.8);
     cursor: pointer;
 
@@ -129,7 +130,7 @@ button.btt a{
 h1
 {
     text-align: center;
-    font-size: 50px;
+    font-size: 3.125em;
     padding: 1em;
     font-weight: 900;
 
@@ -140,14 +141,14 @@ p img#intro_pic
 {
     display: block;
     width: 75%;
-    height: 800px;
+    height: 50em;
     object-fit: cover; /*for cropping image*/
     margin: auto;
 }
 p.left
 {
     color: #ffbe0b;
-    font-size: 35px;
+    font-size: 2.1875em;
 
     position: relative;
     width: fit-content;
@@ -156,16 +157,11 @@ p.left
 
     background-color: rgba(108, 117, 125, 0.8);
 }
-div.info
-{
-    display: flex;
-    margin-top: 50px;
-}
 p.topic
 {
     text-align: center;
 
-    font-size: 50px;
+    font-size: 3.125em;
     font-weight: 700;
 
     position: relative;
@@ -174,12 +170,12 @@ p.topic
 }
 p.details
 {
-    font-size: 24px;
+    font-size: 1.5em;
 
     text-align: left;
     margin-left: 30%;
     margin-right: 10%;
-    padding: 100px;
+    padding: 6.25em;
 
     width: 150%;
     height: 50%;
@@ -193,15 +189,15 @@ p.details
 }
 footer
 {
-    margin-top: 100px;
+    margin-top: 6.25em;
     background-color: rgba(0, 0, 0, 0.5);
 }
 footer a img
 {
-    width: 40px;
+    width: 2.5em;
     position: relative;
-    bottom: 15px;
-    left: 10px;
+    bottom: 1em;
+    left: 0.6em;
 }
 footer p
 {
@@ -213,34 +209,34 @@ footer p
 }
 .margin
 {
-    margin-top: 50px;
+    margin-top: 3.125em;
 }
 h2
 {
-    margin-top: 50px;
-    margin-left: 150px;
+    margin-top: 3.125em;
+    margin-left: 9.375em;
     border-radius: 20%;
     letter-spacing: .2em !important;
     font-weight: 700;;
     width: fit-content;
-    padding: 20px;
+    padding: 1.25em;
     background-color: rgba(250, 235, 215, 0.5);
     color: rgb(169, 70, 0);
 }
 p.info_text
 {
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: 100;
 
     border: 2px solid #fcbf49;
     background-color: #3a0ca355;
-    width: 800px; 
-    padding: 50px;
+    width: 50em; 
+    padding: 3.125em;
     margin: auto;
     border-radius: 10%;
     
-    margin-top: 100px;
+    margin-top: 6.25em;
 }
 a.hlink {
     text-decoration: none;
@@ -254,8 +250,8 @@ img.interest_pic
 {
     display: block;
     margin: auto;
-    margin-top: 100px;
-    width: 1000px;
+    margin-top: 6.25em;
+    width: 62.5em;
 }
 .eform{
     text-align: left;
@@ -265,11 +261,11 @@ img.interest_pic
     font-weight: 700;
     width: fit-content;
     margin: auto;
-    margin-top: 100px;
-    padding: 30px;
+    margin-top: 6.25em;
+    padding: 1.875em;
 }
 form button{
-    margin-top: 20px;
+    margin-top: 1.25em;
     padding: 5px 20px;
     background-color: #003049;
     color: white;
@@ -285,7 +281,132 @@ form button:hover {
     margin: auto;
 }
 span {
-    font-size: 12px;
+    font-size: 0.75em;
     position: relative;
-    margin-left: 13px;
+    margin-left: 0.75em;
+}
+
+/*responsive restructuring*/
+@media (max-width: 600px) {
+    header {
+        height: 7vh;
+    }
+    a.main {
+        font-size: 0.6em;
+    }
+    .dropbtn {
+        padding: 0.1em 1em;
+    }
+    p.info_text {
+        width: 90%;
+        font-size: 1em;
+        padding: 1em;
+    }
+    img.interest_pic {
+        width: 90%;
+    }
+    h1 {
+        font-size: 2.2em;
+        letter-spacing: .2em !important;
+    }
+    h2 {
+        margin: auto;
+        margin-top: 4em;
+    }
+    p.details {
+        width: 90%;
+        font-size: 1em;
+        margin: auto;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-radius: 10%;
+        padding: 1em;
+    }
+    p.topic {
+        position: relative;
+        top: 0em;
+        left: 0em;
+        margin: auto;
+    }
+    p.left {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 1.5em;
+    }
+    p img#intro_pic {
+        width: 90%;
+        height: 28em;
+    }
+    div.flex {
+        flex-direction: column;
+    }
+    .btt {
+        display: none;
+    }
+}
+/*
+@media (max-width: 1000px) {
+    header {
+        height: 7vh;
+    }
+    a.main {
+        font-size: 1.5em;
+    }
+    .dropbtn {
+        padding: 0.1em 1em;
+    }
+    p.info_text {
+        width: 90%;
+        font-size: 1.5em;
+        padding: 1em;
+    }
+    img.interest_pic {
+        width: 90%;
+    }
+    h1 {
+        font-size: 2.2em;
+        letter-spacing: .2em !important;
+    }
+    h2 {
+        margin: auto;
+        margin-top: 4em;
+    }
+    p.details {
+        width: 90%;
+        font-size: 1.3em;
+        margin: auto;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-radius: 10%;
+        padding: 1em;
+    }
+    p.topic {
+        position: relative;
+        top: 0em;
+        left: 0em;
+        margin: auto;
+    }
+    p.left {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 1.5em;
+    }
+    p img#intro_pic {
+        width: 90%;
+        height: 28em;
+    }
+    div.flex {
+        flex-direction: column;
+    }
+    .btt {
+        display: none;
+    }
 }
