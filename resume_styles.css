@@ -133,6 +133,9 @@ a.hlink:hover {
     color: red;
     text-decoration: underline;
 }
+.hide {
+    display: none;
+}
 @media (max-width: 1000px) {
     header {
         height: 7vh;
