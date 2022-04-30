@@ -177,7 +177,6 @@ p.details
     margin-right: 10%;
     padding: 6.25em;
 
-    width: 150%;
     height: 50%;
 
     background-color: #3a0ca355;
@@ -287,6 +286,29 @@ span {
 }
 
 /*responsive restructuring*/
+@media (max-width: 1500px) { /*wtf why isnt this working*/
+    p.details {
+        width: 90%;
+        font-size: 1em;
+        margin: auto;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-radius: 10%;
+        padding: 1em;
+    }
+    p.topic {
+        position: relative;
+        top: 0em;
+        left: 0em;
+        margin: auto;
+    }
+    div.flex {
+        flex-direction: column;
+    }
+    html,body{
+        overflow-x: hidden;
+    }
+}
 @media (max-width: 1000px) {
     header {
         height: 7vh;
@@ -347,25 +369,7 @@ span {
     .btt {
         display: none;
     }
-}
-
-@media (max-width: 1500px) {
-    p.details {
-        width: 90%;
-        font-size: 1em;
-        margin: auto;
-        border-top-right-radius: 0%;
-        border-bottom-left-radius: 0%;
-        border-radius: 10%;
-        padding: 1em;
-    }
-    p.topic {
-        position: relative;
-        top: 0em;
-        left: 0em;
-        margin: auto;
-    }
-    div.flex {
-        flex-direction: column;
+    html,body{
+        overflow-x: hidden;
     }
 }
