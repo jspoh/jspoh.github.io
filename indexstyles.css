@@ -195,15 +195,8 @@ footer a img
 {
     width: 2.5em;
     position: relative;
-    bottom: 0em;
-    left: 0.6em;
-}
-footer p
-{
-    position: relative;
-    bottom: 5em;
-    left: 0.6em;
-    width: fit-content;
+    bottom: 1.4em;
+    left: 2em;
 }
 .margin
 {
@@ -238,11 +231,13 @@ p.info_text
 }
 a.hlink {
     text-decoration: none;
-    color: blue;
+    color: rgb(93, 93, 255);
+    transition: all 0.5s ease;
 }
 a.hlink:hover {
     text-decoration: underline;
     color: red;
+    transition: all 0.5s ease;
 }
 img.interest_pic
 {
@@ -282,6 +277,11 @@ span {
     font-size: 0.75em;
     position: relative;
     margin-left: 0.75em;
+}
+p.tskill {
+    text-align: left; 
+    width: 25em; 
+    height: 28em;
 }
 
 /*responsive restructuring*/
