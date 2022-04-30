@@ -127,8 +127,23 @@ a.hlink {
     color: blue;
     text-decoration: none;
     transition: all 0.5s ease;
+    margin: 0;
 }
 a.hlink:hover {
     color: red;
     text-decoration: underline;
+}
+@media (max-width: 1000px) {
+    header {
+        height: 7vh;
+    }
+    a.main {
+        font-size: 0.6em;
+    }
+    .dropbtn {
+        padding: 0.1em 1em;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
 }

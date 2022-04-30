@@ -285,7 +285,7 @@ p.tskill {
 }
 
 /*responsive restructuring*/
-@media (max-width: 1500px) { /*wtf why isnt this working*/
+@media (max-width: 1500px) {
     p.details {
         width: 90%;
         font-size: 1em;
