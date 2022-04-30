@@ -195,15 +195,14 @@ footer a img
 {
     width: 2.5em;
     position: relative;
-    bottom: 1em;
+    bottom: 0em;
     left: 0.6em;
 }
 footer p
 {
-    margin-left: 75%;
     position: relative;
-    bottom: 0px;
-    right: 0px;
+    bottom: 5em;
+    left: 0.6em;
     width: fit-content;
 }
 .margin
@@ -306,7 +305,7 @@ span {
         flex-direction: column;
     }
     html,body{
-        overflow-x: hidden;
+        overflow-x: hidden; /*prevent additional whitespace on the x axis*/
     }
 }
 @media (max-width: 1000px) {
