@@ -226,17 +226,17 @@ h2
 p.info_text
 {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 100;
 
     border: 2px solid #fcbf49;
     background-color: #3a0ca355;
-    width: 50em; 
+    width: 70%; 
     padding: 3.125em;
     margin: auto;
     border-radius: 10%;
     
-    margin-top: 6.25em;
+    margin-top: 2em;
 }
 a.hlink {
     text-decoration: none;
@@ -251,7 +251,7 @@ img.interest_pic
     display: block;
     margin: auto;
     margin-top: 6.25em;
-    width: 62.5em;
+    width: 60%;
 }
 .eform{
     text-align: left;
@@ -287,7 +287,7 @@ span {
 }
 
 /*responsive restructuring*/
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     header {
         height: 7vh;
     }
@@ -348,36 +348,11 @@ span {
         display: none;
     }
 }
-/*
-@media (max-width: 1000px) {
-    header {
-        height: 7vh;
-    }
-    a.main {
-        font-size: 1.5em;
-    }
-    .dropbtn {
-        padding: 0.1em 1em;
-    }
-    p.info_text {
-        width: 90%;
-        font-size: 1.5em;
-        padding: 1em;
-    }
-    img.interest_pic {
-        width: 90%;
-    }
-    h1 {
-        font-size: 2.2em;
-        letter-spacing: .2em !important;
-    }
-    h2 {
-        margin: auto;
-        margin-top: 4em;
-    }
+
+@media (max-width: 1500px) {
     p.details {
         width: 90%;
-        font-size: 1.3em;
+        font-size: 1em;
         margin: auto;
         border-top-right-radius: 0%;
         border-bottom-left-radius: 0%;
@@ -390,23 +365,7 @@ span {
         left: 0em;
         margin: auto;
     }
-    p.left {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin: auto;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        font-size: 1.5em;
-    }
-    p img#intro_pic {
-        width: 90%;
-        height: 28em;
-    }
     div.flex {
         flex-direction: column;
-    }
-    .btt {
-        display: none;
     }
 }
