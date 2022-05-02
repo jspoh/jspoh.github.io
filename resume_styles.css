@@ -150,3 +150,8 @@ a.hlink:hover {
         overflow-x: hidden;
     }
 }
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+}
