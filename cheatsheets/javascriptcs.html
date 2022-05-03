@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array and methods</title>
+    <style>
+        code {
+            font-weight: 300;
+            background-color: gainsboro;
+            display: block;
+            width: fit-content;
+            margin: 5px 0px;
+        }
+
+        span.indent {
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <hr>
+    <h2>Basics</h2>
+    <hr>
+    <div class="str">
+        <p><b>.concat() .includes() .indexOf()</b></p>
+        <p><code>let newStr = str1.concat(str2);</code></p>
+        <p>
+            <code>const colArr = ['red', 'blue'];</code><br>
+            To find out if 'blue' is in colArr, use <br>
+            <code>colArr.includes('blue');</code> will return boolean value. Only works for arrays.
+        </p>
+        <p>
+            <code>let str = 'hello';</code> <br>
+            To find out if 'h' is in str, use .indexOf('h') <br>
+            <code>str.indexOf('h');</code> will return -1 if not in str and index if in str
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="addingremoving">
+        <p>
+            <b>.push() .pop() .shift() .unshift()</b> <br>
+            <code>const arr = [1, 6, 7, 20];</code> <br>
+            <br>
+            <code>arr.push('x');</code><br>will add x to end of arr - [1,6,7,20,'x'] <br>
+            <br>
+            <code>let removedItem = arr.pop();</code> <br>will remove last item and store it in variable removedItem
+            <br>
+            <br>
+            <code>arr.shift();</code> <br>removes index 0 item in arr <br>
+            <br>
+            <code>arr.unshift('x');</code> <br>adds 'x' to index 0 position in arr <br>
+            <br>
+            <code>arr.reverse();</code> <br>will reverse array and store it back to arr
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="slicesplice">
+        <p>
+            <b>.slice() / .splice() / .sort()</b> <br>
+            <code>const arr = [1,2,3,4,5];</code> <br>
+            <br>
+            <code>arr.slice(1);</code> <br>will return [2,3,4,5] <br>
+            <br>
+            <code>arr.slice(1, 3);</code> <br>will return [2,3] <br>
+            <br>
+            <code>arr.slice(-2);</code> <br>will return [4,5] <br>
+            <br>
+            <code>arr.splice(index, no. of items to replace, replace with);</code><br>
+            <code>arr.splice(2, 1, 'lol');</code> <br>will return [1,2,'lol',4,5] <br>
+        </p>
+    </div>
+    <p>
+        <code>arr.sort()</code> converts everything to string then sorts by utf code. hence if u try to sort <br>
+        [1,2,10,9], it will return [1,10,2,9]
+    </p>
+
+    <hr>
+
+    <p>
+        <b>parseInt()</b> <br>
+        <code>userInput = 'a23';</code> <br>
+        <br>
+        Users may sometimes make typos, but with parseInt, we can get the number in the str or conv str to int.
+        <code>parseInt(userInput);</code> <br>will return the value of 23
+    </p>
+
+    <hr>
+
+    <div class="forloop">
+        <p>
+            Normal for loop, should be easy. <br>
+            <code>for (let i=0;i&lt;10;i++) {console.log(i);}</code>
+        </p>
+        <p>
+            for ..of loop <br>
+            <code>for (let i of array) {console.log(i);}</code> <br>
+            basically its the for i in array function in python
+        </p>
+        <p>
+            for ..in loop <br>
+            <code>for (let i in array) {console.log(i);}</code> <br>
+            If youre using this on an object(class?? dictionary?) i will refer to the keys of the array.
+        </p>
+        <p>
+            <code>Object.values(variable_name);</code> <br>returns the values of the object
+        </p>
+        <hr>
+        <p>
+            <br><b> Diving into more advanced for loops now </b><br>
+        </p>
+        <p>
+            <b>.forEach(func) </b><br>
+            <code>array.forEach(function(i) {console.log(i);})</code> <br>
+            This is p much the same as the for ..of loop
+        </p>
+        <p>
+            <b>.map(func)</b> <br>
+            <code>newArr = array.map(function(i) {return i*2;})</code> <br>
+            .map creates a new array with the returned values. in this case we created a new array of doubled values.
+        <p>
+            .map can also be used in objects. here's an example <br>
+            <br>
+            <code>
+            <code>const fullNames = [{first: 'js', last: 'poh'}, {first: 'michael', last: 'jordan'}];</code> <br>
+            <code>let firstNames = fullNames.map(function(name) {return name.first;})</code> <br>
+            </code> <br>
+            Using this, we have created a firstNames array with the map function. I guess for loop works too but this is
+            <br>
+            more concise?? idk honestly
+        </p>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="arrow">
+        <p>
+            Arrow notation for creating functions <br>
+            Basically just rewriting a function in a more concise way <br>
+            <br>
+            Instead of <br>
+            <code>function square(x) {return x**2;}</code> <br>
+            We can write it like this instead: <br>
+            <code>const square = (x) => {return x**2;}</code> <br>
+            <br>
+            They mean the same thing and you use them the same way. square(9) will return 81.
+        </p>
+    </div>
+    <hr>
+    <div class="random">
+        <p>
+            <b>Random int</b> <br>
+            <br>
+            To get a random int, we can use this <br>
+            <code>Math.ceil(Math.random()*10);</code> <br>
+            This will give a rand num from 1-10. <br>
+            Math.random will give a random decimal from 0-1. Hence by using Math.ceil, we can convert them into ints and
+            * by how many numbers we need.
+        </p>
+    </div>
+    <hr>
+
+    <div class="settimeout">
+        <p>
+            <b>setTimeout()</b> is basically time.sleep() <br>
+            <code>setTimeout(function, time in ms)</code> <br>
+            hence if u want the program to wait 5 seconds before printing 'hello', <br>
+            <code>setTimeout(()=>{console.log('hello');}, 5000)</code> <br>
+            Note that this only works with functions. the ()=>{} is an arrow notation that denotes a function <br>
+            If you want to use a prewritten function such as <br>
+            <code>
+                const sayHi = () => {console.log('hi');}; <br>
+                setTimeout(sayHi, 5000);
+            </code>
+            <br>
+            It is written as sayHi and not sayHi() so as to not execute the function right away.
+        </p>
+        <hr>
+        <p>
+            <b>setInterval()</b> executes a given function every n milliseconds <br>
+            The syntax is the same as setTimeout(). <br>
+            <code>setInterval(function, time in ms);</code> <br>
+            hence <br>
+            <code>setInterval(()=>{console.log(Math.random());}, 1000);</code>
+            <br>
+            If you want to be able to stop the interval, you need to set the ID. <br>
+            <code>const id = setInterval(()=>{console.log(Math.random());}, 1000);</code> <br>
+            and to stop it, <br>
+            <code>clearInterval(id);</code>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="filter">
+        <p>
+            <b>.filter()</b> <br>
+            Allows you to filter returned data from an arr to a new arr. will return the arr value if true. <br>
+            <code>const newArr = arr.filter(function)</code> <br>
+            <br>
+            <code>const arr = [1,2,3,4,5,6,7,8,9];</code>
+            <code>const newArr = arr.filter((i)=>{return i&lt;5;});</code> <br>
+            will return the value of <br>
+            <code>newArr = [1,2,3,4];</code> <br>
+            arr will remain unchanged
+        </p>
+        <p>
+            <b>.filter practice</b> <br>
+            Write a function called <code>validUserNames</code> that will return a new array of names under 10 chars.
+            <br>
+            <code>
+                function validUserNames(nameArr) { <br>
+                <span class="indent">aaaa</span>const newArr = nameArr.filter((name)=>{return name.length &lt; 10;}); <br>
+                <span class="indent">aaaa</span>return newArr; <br>
+                }
+            </code> <br>
+            and here's the simplified code. quite confusing zz <br>
+            <code>const validUserNames = (nameArr)=>{
+                const newArr = nameArr.filter((name)=>{
+                    return name.length&lt;10;});
+                    return newArr;}</code>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="someevery">
+        <p>
+            <b>.some()</b> <br>
+            checks to see if some values in array passes a test and returns a boolean value <br>
+            <code>
+                examScores.some((score)=>score &gt; 50)
+            </code> <br>
+            if some scores are above 50, this will return true
+        </p>
+        <p>
+            <b>.every()</b> <br>
+            checks to see if every value in array passes the test and returns a boolean value <br>
+            <code>
+                examScores.every((score)=>score &gt; 50)
+            </code>
+            every score has to be above 50 for this to return true.
+        </p>
+        <p>
+            Write a function called allEvens to determine if an array consists of even numbers only <br>
+            <code>
+                const allEvens = (numArr) => {<br>
+                <span class="indent">aaaa</span>    const allEven = numArr.every(num=>num%2===0);<br>
+                <span class="indent">aaaa</span>    if (allEven) {return true;}br <br>
+                <span class="indent">aaaa</span>    else {return false;} <br>
+                }
+            </code>
+        </p>
+        <p>
+            <b>.reduce()</b> <br>
+            Reduces an array to a single value <br>
+            <code>
+                const arr = [1,2,3,4,5]; <br>
+                const sum = arr.reduce((sum, i)=>{return sum+i;});
+            </code>
+            <br>
+            sum will be 1+2+3+4+5; <br>
+            If instead of finding the sum of all numbers in arr i wna find the biggest number, <br>
+            <code>
+                const arr = [1,3,2,4,6,5]; <br>
+                const biggestNum = arr.reduce((max, i)=>{if (i&gt;max){return i;} return max;});
+            </code> <br>
+            biggestNum will be 6 in this case.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="default">
+        <b>default parameters</b> <br>
+        self-explanatory stuff <br>
+        <code>
+            const add = (a=0,b=0) => {return a+b;};
+        </code>
+        <br>
+        value defaults to 0 if no args provided. so it will return 0 instead of NaN if <br>
+        <code>add();</code>
+    </div>
+
+    <hr>
+
+    <div class="spread">
+        <p>
+            <b>Spread in function calls</b> <br>
+            pass in 1 array as an argument to a function that expects multiple <br>
+            <code>
+                const arr = [1,2,3]; <br>
+                Math.max(...arr);
+            </code><br>
+            yes, its the 3 dots lol. kinda like removing the array brackets [] <br>
+            can be useful in combining arrays, like so: <br>
+            <code>
+                const landAnimals = ['dog', 'cat']; <br>
+                const flightedAnimals = ['bat', 'bird']; <br>
+                const allAnimals = [...landAnimals, ...flightedAnimals];
+            </code>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="args">
+        <p>
+            <b>Passing in multiple args to a function</b> aka rest params <br>
+            <code>
+                const func = (...args) => {console.log(args);};
+            </code> <br>
+            All arguments passed in will be stored in an array format tied to variable args <br>
+            with this, we can write better add statements that take multiple values like this <br>
+            <code>
+                function add(...numArr) {<br>
+                <span class="indent">aaaa</span>    return numArr.reduce((sum, i)=>sum+i); <br>
+                }
+            </code> <br>
+            <code>
+                const add = (...numArr) => {return numArr.reduce((sum, i)=>sum+i);}
+            </code> <br>
+            i guess writing the return in front of arr.reduce() will return the sum value <br>
+            Another example:
+            <code>
+                const winners = (champ, ...participantArr)=>{console.log(`Champion: ${champ}\nThanks to everyone else:\n${participantArr}`);};
+            </code> <br>
+            The above code will output:
+            <code>
+                Champion: name <br>
+                Thanks to everyone else: <br>
+                name, name, name, etc
+            </code>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="arrdestructure">
+        <p>
+            <b>Array destructuring</b> <br>
+            <code>
+                const numArr = [1,2,3,4,5]; <br>
+                const [x,y,z,...theRest] = numArr;
+            </code> <br>
+            x will be 1, y will be 2, z will be 3, and theRest will be an array containing the remaining values[4,5] in
+            this case <br>
+        </p>
+        <p>
+            <b>Object destructuring</b> <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const name = user.name;
+            </code> <br>
+            I could do this to put the user.name in a new variable but can prove tedious if i need to do it for many
+            items so <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const {name, age, gender:sex} = user;
+            </code>
+            In the above case, i saved the gender value into a variable called sex instead <br>
+            default values can also be used here in case some user values may be blank <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const {name, age='unknown', gender:sex} = user;
+            </code>
+        </p>
+        <p>
+            <b>Parameter destructuring</b> <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const intro = (u)=>{console.log(`He is ${u.name}, aged ${u.age}.`);};
+            </code>
+            with parameter destructuring, we can instead write the code like this <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const intro = (u)=>{const {name:n, age:a}=u; console.log(`He is ${n}, aged ${a}.`);};
+            </code>
+            if we destructure it even more, <br>
+            <code>
+                const user = {name: 'john', age: '29', gender: 'male'}; <br>
+                const intro = ({name:n, age:a})=>{console.log(`He is ${n}, aged ${a}.`);};
+            </code>
+            just to explain a little more, this separates the name and age values from the entire object right away
+        </p>
+    </div>
+
+    <hr>
+
+    <h2>Document Object Model (DOM)</h2>
+    <hr>
+
+    <div class="targeting">
+        <p>
+        <ul> <b>
+                <li>Ways to target certain elements</li>
+                <ul>
+                    <li>getElementById</li>
+                    <li>getElementsByTagName</li>
+                    <li>getElementsByClassName</li>
+                </ul>
+        </ul> </b>
+        Can use console to show the object with ID: <br>
+        <code>
+            const variable = document.getElementById('ID');
+            console.dir(variable);
+        </code>
+        as for tag name, index may be passed in to refer to a specific object:<br>
+        <code>
+            const allImages = document.getElementsByTagName('img');
+            console.dir(allImages[index]);
+        </code>
+        note that this creates a HTMLCollection, not an array. <br>
+        classes are p much the same as ID: <br>
+        <code>
+            const variable = document.getElementsByClassName('class');
+            console.dir(variable);
+        </code> <br>
+        Always use ID if only selecting a single element.
+        </p>
+    </div>
+
+    <div class="queryselector">
+        <p>
+            <b>querySelector, querySelectorAll</b> <br>
+            Better way to select stuff, just look: <br>
+            <code>
+                document.querySelector('img'); <br>
+                document.querySelector('#id'); <br>
+                document.querySelector('.class'); <br>
+            </code>
+            However, query selector only shows the first match instead of all items as compared to the previous method
+            that returns a HTMLCollection. <br>
+            IDs remained unchanged of course since you should only be selecting one in the first place. <br>
+            If you would like to select something other than the first img for example, <br>
+            <code>
+                document.querySelector('img:nth-of-type(2)');
+            </code>
+            This will select the 2nd img element. <br>
+            If you really want a HtmlCollection using querySelector, use querySelectorAll instead. <br>
+            <code>
+                document.querySelectorAll('img');
+            </code>
+            You can use similar stuff like css. for example, <br>
+            <code>
+                document.querySelector('p a');
+                document.querySelector('a.big');
+            </code>
+        </p>
+    </div>
+</body>
+
+</html>
