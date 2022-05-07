@@ -457,6 +457,469 @@
             </code>
         </p>
     </div>
+
+    <div class="inner">
+        <p>
+            <b>.textContent vs .innerText</b> <br>
+            .textContent shows what is written in the HTML doc but .innerText only shows whats displayed. <br>
+            Hence, if display:none, it will still show up on .textContent but not .innerText <br>
+            <br>
+            <b>.innerHTML</b> <br>
+            however, with .innerHTML, it will retrieve everything inside, including stuff like p tags, div tags, spans,
+            bold
+            etc. so if you wna add a span in a p or make some words bold for example, you should use .innerHTML
+            <br>
+            to update value, can use = to change completely or or += to append
+        </p>
+    </div>
+
+    <div class="input">
+        <p>
+            <b>querySelector('input[type='text']')</b>
+        </p>
+    </div>
+
+    <div class="attribute">
+        <p>
+            <b>.setAttribute</b> <br>
+            can be used to change certain elements, classes, ids etc <br>
+            <code>
+                document.querySelector('img').setAttribute('src', 'https://devsprouthosting.com/images/chicken.jpg');
+            </code> <br>
+            this means ive changed the src to this new img link
+        </p>
+    </div>
+
+    <div class="styles">
+        <p>
+            <b>changing styles with javascript</b> <br>
+            <code>
+                const h1 = document.querySelector('h1'); <br>
+                h1.style.fontSize = '100px';
+            </code>
+            in css we use font-size but in js its in camelCase hence fontSize. <br>
+            dont be alarmed if it doenst contain info from the .css stylesheet. it only reads from html.
+        </p>
+    </div>
+
+    <div class="iteratejs">
+        <p>
+            <b>for loops to change stuff</b> <br>
+            <code>
+                html code: <br>
+                h1  <br>
+                span R <br>
+                span A <br>
+                span I <br>
+                span N <br>
+                span B <br>
+                span O <br>
+                span W <br>
+                <br>
+                js code: <br>
+                const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; <br>
+                <br>
+                const allSpans = document.querySelectorAll('h1 span'); <br>
+                <br>
+                let i = 0;<br>
+                for (let span of allSpans) { <br>
+                <span class="indent">aaaa</span>    span.style.color = colors[i]; <br>
+                <span class="indent">aaaa</span>    i++; <br>
+                } <br>
+            </code>
+        </p>
+    </div>
+
+    <div class="classlist">
+        <p>
+            <b>.classList</b> <br>
+            this can be used to add or remove classes from elements <br>
+            <code>
+                const h1 = document.querySelector('h1'); <br>
+                h1.classList.add('className'); <br>
+                h1.classList.remove('className'); <br>
+                h1.classList.toggle('className')
+            </code>
+            add and remove shld be self explanatory, but toggle basically is like a switch to toggle it on or off. <br>
+            so if the class is already present, it will remove it and vice versa.
+        </p>
+    </div>
+
+    <div class="parentchildelement">
+        <p>
+            <b>.parentElement</b> <br>
+            references the parent element. so for example if i have a div p b tag, <br>
+            <code>
+                const firstBold = document.querySelector('b'); <br>
+                firstBold.parentElement; <br>
+                firstBold.parentElement.parentElement;
+            </code>
+            this would refer to p and div respectively
+        </p>
+        <p>
+            <b>.childElement</b> <br>
+            the opposite would be true here <br>
+            <code>.childElementCount</code>
+            will show the number of child elements whereas <br>
+            <code>.children</code>
+            will show the respective children tags/elements
+        </p>
+    </div>
+
+    <div>
+        <p>
+            <b>Creating a new img element and appending it to body</b> <br>
+            <code>
+                const newImg = document.createElement('img'); <br>
+                newImg.src = 'link'; <br>
+                document.body.append('newImg'); <br>
+                newImg.classList.add('className');
+            </code>
+            created a new img with src and added to the end of body element. adding class is for css styles
+        </p>
+        <p>
+            <b>Creating paragraph element with a bg color of blue and appending it to body</b> <br>
+            <code>
+                const newP = document.createElement('p'); <br>
+                newP.innerText = 'I am a new paragraph!'; <br>
+                newP.style.backgroundColor = 'blue'; <br>
+                document.body.append(newP);
+            </code>
+        </p>
+
+        <p>
+            <b>.prepend</b> <br>
+            basically adds to the element but at the front, kind of like append but yea, at the front.
+        </p>
+
+        <p>
+            <b>.append/.appendChild practice</b> <br>
+            <code>
+                for (let i=0; i&lt;100; i++) { <br>
+                    const newButton = document.createElement('button'); <br>
+                    newButton.innerText = 'Hey!'; <br>
+                    const container = document.querySelector('#appContainer'); <br>
+                    container.appendChild(newButton); <br>
+                }
+            </code>
+            if you run the above code, you will get 100 buttons below this line
+        <p id="appContainer"></p>
+        </p>
+
+        <p>
+            <b>.remove()</b> <br>
+            This text will be removed if you run the code below -&gt; <span id="remove">I will be removed!</span> <br>
+            <code>
+                document.querySelector('#remove').remove();
+            </code>
+        </p>
+    </div>
+
+    <hr>
+    <h2>DOM Events</h2>
+    <p><b>Event reactions etc.</b></p>
+    <hr>
+
+    <div class="onclick">
+        <p>
+            <b>onclick event</b> <br>
+            this can be done in the html document itself, although unrecommended <br>
+            <button onclick="alert('you clicked me!'); alert('stop clicking!');">click me!</button> <br>
+            code: <br>
+            <code>
+                &lt;button onclick="alert('you clicked me!'); alert('stop clicking!');"&gt;click me!&lt;/button&gt;
+            </code>
+            you can also do a doubleclick thing <br>
+            <button ondblclick="alert('double-clicked!')">double click me!</button> <br>
+            code: <br>
+            <code>
+                &lt;button ondblclick="alert('double-clicked!')"&gt;click me!&lt;/button&gt;
+            </code>
+        </p>
+        <p>The above way is not a good way to do it, should use the js file instead</p>
+        <p>
+            <b>better onclick</b> <br>
+            <code>
+                const btn = document.querySelector('#v2'); <br>
+                btn.onclick = ()=>{alert('you clicked me v2!');}
+            </code>
+            <button id="v2">click me after pasting the above code into the console!</button>
+        </p>
+    </div>
+
+    <div class="onmouseenter">
+        <p>
+            <b>onmouseenter event</b> <br>
+            <code>
+                const notouch = ()=&gt;{console.log('AAAAAHHH!'); console.log('DONT TOUCH MEE!');} <br>
+
+                const btn = document.querySelector('#ome'); <br>
+                btn.onmouseenter = notouch;
+            </code>
+            <button id="ome">DONT TOUCH ME!</button> <br>
+            take note that btn.onmouseenter=notouch; and not notouch(); <br>
+            this is to only execute the function when btn.onmouseenter <br>
+            if written as notouch(), the function will execute straight away.
+        </p>
+    </div>
+
+    <div class="eventlistener">
+        <p>
+            <b>addEventListener (best way)</b> <br>
+            <code>
+                const btn = document.querySelector('#ael'); <br>
+                btn.addEventListener('click', function(){alert('clicked!')})
+            </code>
+            <button id="ael">click me!</button>
+        </p>
+        <p>
+            addEventListener is best because we can <b>call multiple functions</b> <br>
+            <code>
+                const btn = querySelector('#id'); <br>
+                btn.onclick = function1; <br>
+                btn.onclick = function2; <br>
+            </code>
+            The above code will only output function 2 when button is clicked as it is overwritten <br>
+            however, with event listener, we can call multiple functions thats why it is better <br>
+            here's how it should be written: <br>
+            <code>
+                const btn = querySelector('#id'); <br>
+                btn.addEventListener('click', function1); <br>
+                btn.addEventListener('click', function2); <br>
+            </code>
+            now it will run function 1 and then 2 respectively. <br>
+            <br>
+            <b>call function1 once along with function2 and then call function2 only subsequently</b> <br>
+            <code>
+                const btn = querySelector('#id'); <br>
+                btn.addEventListener('click', function1, {once: true}); <br>
+                btn.addEventListener('click', function2); <br>
+            </code>
+        </p>
+    </div>
+    <hr>
+    <div class="key">
+        <p>
+            <b>keylogging</b> <br>
+            <code>
+                const input = document.querySelector('input'); <br>
+                input.addEventListener('keydown', function(e){console.log(e);});
+            </code>
+            This code will show everything whereas <br>
+            <code>
+                const input = document.querySelector('input'); <br>
+                input.addEventListener('keydown', function(e){console.log(e.key);console.log(e.code);});
+            </code>
+            If you're making a game or just want to log ALL KEYS, <br>
+            <code>
+                window.addEventListener('keydown', function(e){console.log(e.key, e.code);});
+            </code>
+            with that, we can create a switch case to log arrow/keyboard key controls <br>
+            <code>
+                window.addEventListener('keydown', function(e){ <br>
+                &emsp;switch(e.code.toLowerCase()) { <br>
+                &emsp;&emsp;case 'arrowup': <br>
+                &emsp;&emsp;case 'keyw': <br>
+                &emsp;&emsp;&emsp;console.log('up'); <br>
+                &emsp;&emsp;&emsp;break; <br>
+                &emsp;&emsp;case 'arrowdown': <br>
+                &emsp;&emsp;case 'keys': <br>
+                &emsp;&emsp;&emsp;console.log('down'); <br>
+                &emsp;&emsp;&emsp;break; <br>
+                &emsp;&emsp;case 'arrowleft': <br>
+                &emsp;&emsp; case 'keya': <br>
+                &emsp;&emsp;&emsp;console.log('left'); <br>
+                &emsp;&emsp;&emsp;break; <br>
+                &emsp;&emsp;case 'arrowright': <br>
+                &emsp;&emsp;case 'keyd': <br>
+                &emsp;&emsp;&emsp;console.log('right'); <br>
+                &emsp;&emsp;&emsp;break; <br>
+                &emsp;&emsp;default: <br>
+                &emsp;&emsp;&emsp;console.log('invalid!'); <br>
+                &emsp;} <br>
+                });
+            </code>
+        </p>
+    </div>
+    <hr>
+    <h2>Form events, preventDefault</h2>
+    <hr>
+
+    <div class="preventdefault">
+        <b>preventDefault()</b> <br>
+        Usually when we submit a form, it would bring us to a different page. Sometimes, we don't want that. <br>
+        <code>
+            const form = document.querySelector('#formId'); <br>
+            form.addEventListener('submit', function(e){ <br>
+            &emsp;e.preventDefault(); <br>
+            &emsp;console.log('form submitted'); <br> 
+            })
+        </code>
+        This code will keep us on the same page after submission.
+    </div>
+
+    <div class="formpractice">
+        <p><b>Let's create a form to practice</b></p>
+        <form id="formprac" action="">
+            <h3>List</h3>
+            <p>
+                <label for="addtolist">Add to list:</label>
+                <input type="text" id="addtolist" placeholder="Item to add to list" required>
+                <button id="submitbtn">Submit</button>
+            </p>
+            Stuff in list:
+            <ul id="formlist">
+            </ul>
+        </form>
+        <br>
+        <p>This code gives the form above it's function</p>
+        <code>
+            const form = document.querySelector('#formprac'); <br>
+            const inputField = document.querySelector('#addtolist') <br>
+            <br>
+            form.addEventListener('submit', (e)=>{ <br>
+                &emsp;e.preventDefault(); <br>
+                &emsp;const newLi = document.createElement('li'); <br>
+                &emsp;newLi.innerText = inputField.value; <br>
+                &emsp;document.querySelector('#formlist').append(newLi); <br>
+                &emsp;inputField.value = ''; <br>
+            });     
+        </code>
+    </div>
+
+    <div class="change">
+        <p>
+            <b>change event</b> <br>
+            <code>
+                const input = document.querySelector('#input'); <br>
+                input.addEventListener('change', function(e){console.log('change');});
+            </code>
+            This code will log whenever input field is changed. you have to select something else for it to read. <br>
+            <input type="text" id="input">
+        </p>
+    </div>
+
+    <div class="input">
+        <p>
+            <b>input event</b> <br>
+            <code>
+                const input = document.querySelector('#inputeg'); <br>
+                input.addEventListener('input', function(e){console.log(e.data);});
+            </code>
+            This code will log whenever you input stuff. this will log the current key input. <br>
+            <input type="text" id="inputeg">
+        </p>
+        <p>
+            We can also make another paragraph or any other element follow the content in the input field. <br>
+            <code>
+                const input = document.querySelector('#inputCopy'); <br>
+                input.addEventListener('input', function(e){ <br>
+                &emsp;if (input.value) { <br>
+                &emsp;&emsp;document.querySelector('#copiedText').innerText = e.data.toUpperCase(); <br>
+                &emsp;&emsp;document.querySelector('#currentinput').innerText = input.value; <br>
+                &emsp;} <br>
+                &emsp;else { <br>
+                &emsp;document.querySelector('#currentinput').innerText = 'None'; <br>
+                &emsp;} <br>
+                }); 
+            </code>
+            <input type="text" id="inputCopy"> <br>
+            Current input letter: <span id="copiedText">None</span> <br>
+            Current input: <span id="currentinput">None</span>
+        </p>
+    </div>
+
+    <div class="bubbling">
+        <b>Event bubbling</b> <br>
+        If you have a span in p in div and all of them have onclick reactions, they will all play. <br>
+        to stop it, you have to add <b>event.stopPropagation()</b> in the eventlistener function.
+    </div>
+
+    <div class="delegation">
+        <b>Event delegation</b> <br>
+        I have 2 li tags and ive written a for loop to iterate over them to add event listeners so that if i click <br>
+        on them, display will be set to none. However, this will not work for new li elements that I add via input
+        forms. <br>
+        hence, i need to shift focus to the <b>target</b> inside the parent element <b>ul</b> <br>
+        here's an example: <br>
+        <form id="formdel" action="">
+            <input type="text" id="inputdel"> <button>Submit</button>
+        </form>
+        List: <br>
+        <ul id="uldel">
+            <li>Click me to make me disappear!</li>
+        </ul>
+        code: <br>
+        <code>
+        const delinput = document.querySelector('#inputdel'); <br>
+        const delform = document.querySelector('#formdel'); <br>
+        const delul = document.querySelector('#uldel'); <br>
+        <br>
+        delform.addEventListener('submit', (e) => { <br>
+        &emsp;    e.preventDefault(); <br>
+        &emsp;    const newLi = document.createElement('li'); <br>
+        &emsp;    newLi.innerText = delinput.value; <br>
+        &emsp;    delul.append(newLi); <br>
+        &emsp;    delinput.value = ''; <br>
+        }); <br>
+        <br>
+        delul.addEventListener('click', (e) => { <br>
+            &emsp;    e.target.nodeName === 'LI' && e.target.remove(); <br>
+        });
+        </code> <br>
+        <code>
+            e.target.nodeName === 'LI' && e.target.remove(); 
+        </code>
+        is basically the same as <br>
+        <code>
+            if (e.target.nodeName === 'LI') {e.target.remove();}
+        </code> <br>
+        This is to ensure that you're only removing li elements on click. <br>
+        note that li has to be in <b>caps</b>.
+    </div>
+
+    <script>
+        // for stuff in list
+        const listform = document.querySelector('#formprac');
+        const inputField = document.querySelector('#addtolist')
+
+        listform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newLi = document.createElement('li');
+            newLi.innerText = inputField.value;
+            document.querySelector('#formlist').append(newLi);
+            inputField.value = '';
+        });
+
+        //for input event
+        const ininput = document.querySelector('#inputCopy');
+        ininput.addEventListener('input', function (e) {
+            if (input.value) {
+                document.querySelector('#copiedText').innerText = e.data.toUpperCase();
+                document.querySelector('#currentinput').innerText = ininput.value;
+            }
+            else {
+                document.querySelector('#currentinput').innerText = 'None';
+            }
+        });
+
+        //for event delegation
+        const delinput = document.querySelector('#inputdel');
+        const delform = document.querySelector('#formdel');
+        const delul = document.querySelector('#uldel');
+
+        delform.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newLi = document.createElement('li');
+            newLi.innerText = delinput.value;
+            delul.append(newLi);
+            delinput.value = '';
+        });
+
+        delul.addEventListener('click', (e) => {
+            e.target.nodeName === 'LI' && e.target.remove();
+        });
+    </script>
 </body>
 
 </html>
