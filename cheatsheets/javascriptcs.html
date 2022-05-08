@@ -182,7 +182,11 @@
                 setTimeout(sayHi, 5000);
             </code>
             <br>
-            It is written as sayHi and not sayHi() so as to not execute the function right away.
+            It is written as sayHi and not sayHi() so as to not execute the function right away. <br>
+            the count is independent to other stuff altho js is a single threaded language. so if you put 1sec. no
+            matter <br>
+            what, it will run the code at 1second even if theres another timeout 1sec in front of it. <br>
+            The way to get past this is to nest the timeouts in each other or just hardcode the timings
         </p>
         <hr>
         <p>
@@ -1009,6 +1013,113 @@
                 }
             </code>
         </p>
+    </div>
+    <hr>
+    <div class="backup">
+        <p>
+            <b>Requests with callbacks</b> <br>
+            <code>
+                makeRequest(()=>{//do this},()=>{//if prev function didnt work, do this});
+            </code>
+            fk la idk wtf this is
+        </p>
+    </div>
+    <hr>
+    <h2>Promises</h2>
+    <hr>
+    <div class="promise">
+        <p>
+            <code>
+                new Promise((resolve, reject)=>{//can either resolve(), reject(), or ignore})
+            </code>
+            if resolve() or reject() isnt passed in, the status would be pending. <br>
+            to add on to the thing above <br>
+            <code>
+                const request = (url) => { <br>
+                    &emsp;return new Promise((resolve, reject)=>{ <br>
+                        &emsp;&emsp;const rand = Math.random(); <br>
+                        &emsp;&emsp;setTimeout(()=>{ <br>
+                            &emsp;&emsp;&emsp;if (rand&gt;0.5) {resolve('data');} <br>
+                            &emsp;&emsp;&emsp;else {reject('Server timeout');} <br>
+                            &emsp;&emsp;}) <br>
+                            &emsp;}) <br>
+                } <br>
+                <br>
+                request('/search/goodstuff') <br>
+                &emsp;.then((data)=>{ <br>
+                    &emsp;&emsp;console.log('Data:', data); <br>
+                }) <br>
+                &emsp;.catch((err)=>{ <br>
+                    &emsp;&emsp;console.log('Error:', err); <br>
+                })
+            </code>
+            .then will run if promise is resolved, .catch will run if promise is rejected <br>
+            seems like a load of stuff idek what it is for, but heres a practical application <br>
+            <code>
+                const delayedColorChange = (color, delay)=>{ <br>
+                    &emsp;return new Promise((resolve, reject)=>{ <br>
+                        &emsp;&emsp;setTimeout(()=>{ <br>
+                            &emsp;&emsp;&emsp;document.querySelector('body').style.backgroundColor = color; <br>
+                            &emsp;&emsp;&emsp;resolve(); <br>
+                            &emsp;&emsp;}, delay); <br>
+                            &emsp;}) <br>
+                } <br>
+                <br>
+                delayedColorChange('red', 1000) <br>
+                &emsp;.then(()=>delayedColorChange('green', 1000)) <br>
+                &emsp;.then(()=>delayedColorChange('blue', 1000)) <br>
+                &emsp;.then(()=>delayedColorChange('black', 1000)) <br>
+                &emsp;.then(()=>delayedColorChange('white', 1000)) <br>
+                <br>
+                document.querySelector('body').style.transition = '1s all ease';
+            </code>
+            The above code will change colors smoothly <br>
+            <b>i guess if youre calling a function, dont put {}</b>
+        </p>
+    </div>
+    <hr>
+    <h2>Asynchronous functions</h2>
+    <hr>
+    <div class="async">
+        <b>async funtions</b> <br>
+        async functions automatically return a promise <br>
+        <code>
+            async function asyncFunc(){ <br>
+                &emsp;const rand = Math.random(); <br>
+                &emsp;if (rand&gt;0.5) {return 'returning stuff = resolved'} <br>
+                &emsp;else {throw new Error('Error = rejected')} <br>
+            } <br>
+            <br>
+            const newFunc = async (){ <br>
+                &emsp;same stuff as above <br>
+            } <br>
+        </code>
+        as stated above, return stuff to resolve promise, throw an error to reject it <br>
+        wit this, we can use .then and .catch: <br>
+        <code>
+            async function asyncFunc(){ <br>
+                &emsp;const rand = Math.random(); <br>
+                &emsp;if (rand&gt;0.5) {return 'returning stuff = resolved'} <br>
+                &emsp;else {throw new Error('Error = rejected')} <br>
+            } <br>
+            <br>
+            asyncFunc() <br>
+            &emsp;.then(data => {console.log('Promise resolved:', data);}) <br>
+            &emsp;.catch(err => {console.log('Promise rejected:', err);})
+        </code>
+        <br>
+        Small real world example: technically else if and else arent needed here.. but wtv<br>
+        <code>
+            const login = async (user, pw) => { <br>
+                &emsp;if (!user || !pw) {throw 'Missing credentials'} <br>
+                &emsp;else if (user === 'username' && pw === 'password') {return 'Welcome!'}  <br>
+                &emsp;else {throw 'Invalid password!'} <br>
+            } <br>
+            <br>
+            login('username', 'password') <br>
+                &emsp;.then(msg=>{console.log('Successfully logged in!'); console.log(msg);}) <br>
+                &emsp;.catch(msg=>{console.log(msg)}) <br>
+        </code>
     </div>
 
     <script>
