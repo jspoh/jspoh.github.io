@@ -106,10 +106,14 @@ button.btt{
     background-color: rgba(49, 50, 49, 0.8);
     cursor: pointer;
 
-    border: 1px solid black;
+    border: none;
     border-radius: 20%;
 
-    transition: all 0.2s;
+    transition: all 1s;
+
+    opacity: 0;
+
+    z-index: 99; /*ensure its always on top */
 }
 button.btt:hover {
     transform: translateY(-1px);
@@ -278,6 +282,9 @@ p.tskill {
     text-align: left; 
     width: 25em; 
     height: 28em;
+}
+.submit {
+    cursor: pointer;;
 }
 
 /*responsive restructuring*/

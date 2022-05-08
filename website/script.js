@@ -31,3 +31,14 @@ function openTab(tabName) {
     }
     document.querySelector(`.${tabName}`).classList.add('selected'); // adding selected class to the selected tablink
 }
+
+//back to top button
+const bttButton = document.querySelector('#bttButton');
+window.onscroll = ()=>{
+    if (document.documentElement.scrollTop > 500 || document.body.scrollTop > 500) { 
+        //document.body.scrollTop is deprecated by chrome but document.documentElement.scrollTop works. 1scroll = 100
+        bttButton.style.opacity = '1';
+        } else {
+        bttButton.style.opacity = '0';
+        }
+};
