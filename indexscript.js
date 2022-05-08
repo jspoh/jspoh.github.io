@@ -24,4 +24,4 @@ const displaymsg2 = () => {
 setTimeout(displaymsg1, 3000);
 setTimeout(()=>{h1.innerText=''; index=0; displaymsg2();}, 6000);
 setTimeout(()=>{h1.innerText=''; index=0;}, 10000);
-setTimeout(()=>{window.location.href='about.html';}, 11000);
+setTimeout(()=>{window.location.href='website/about.html';}, 11000);
