@@ -144,6 +144,7 @@ p img#intro_pic
     height: 50em;
     object-fit: cover; /*for cropping image*/
     margin: auto;
+    border-radius: 10%;
 }
 p.left
 {
@@ -159,32 +160,25 @@ p.left
 }
 p.topic
 {
-    text-align: center;
-
     font-size: 3.125em;
     font-weight: 700;
-
-    position: relative;
-    top: 3.5em;
-    left: 5em;
+    width: 35%;
+    text-align: center;
 }
 p.details
 {
     font-size: 1.5em;
 
-    text-align: left;
-    margin-left: 30%;
-    margin-right: 10%;
-    padding: 6.25em;
-
-    height: 50%;
+    text-align: center;
+    padding: 3em 1em;
+    width: 50%;
 
     background-color: #3a0ca355;
 
     box-sizing: border-box;
     border: 1px solid #fcbf49;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-top-right-radius: 200px;
+    border-bottom-left-radius: 200px;
 }
 footer
 {
@@ -223,6 +217,7 @@ p.info_text
     border: 2px solid #fcbf49;
     background-color: #3a0ca355;
     width: 70%; 
+    max-width: 100%;
     padding: 3.125em;
     margin: auto;
     border-radius: 10%;
@@ -243,8 +238,9 @@ img.interest_pic
 {
     display: block;
     margin: auto;
-    margin-top: 6.25em;
-    width: 60%;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 100px;
 }
 .eform{
     text-align: left;
@@ -307,6 +303,20 @@ p.tskill {
     html,body{
         overflow-x: hidden; /*prevent additional whitespace on the x axis*/
     }
+    .tab {
+        flex-direction: column;
+        width: 95% !important;
+    }
+    .container {
+        flex-direction: column;
+        padding: 0px !important;
+    }
+    .tabcontent {
+        width: 95% !important;
+    }
+    p.info_text {
+        width: 100% !important;
+    }
 }
 @media (max-width: 1000px) {
     header {
@@ -319,7 +329,7 @@ p.tskill {
         padding: 0.1em 1em;
     }
     p.info_text {
-        width: 90%;
+        width: 100% !important;
         font-size: 1em;
         padding: 1em;
     }
@@ -372,4 +382,91 @@ p.tskill {
     html,body{
         overflow-x: hidden;
     }
+    .tab {
+        flex-direction: column;
+        width: 95% !important;
+    }
+    .container {
+        flex-direction: column;
+        padding: 0px !important;
+    }
+    .tabcontent {
+        width: 95% !important;
+    }
+    .eform {
+        width: 95%;
+    }
 }
+
+/*animations*/
+.revealU{
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.revealL{
+    position: relative;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.revealR{
+    position: relative;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*tabs*/
+.tab{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #001d3d;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.tab button{
+    background-color: #001d3d;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1em 15%;
+    transition: 1s;
+    font-size: 1.3em;
+    color: white;
+}
+.tab button:hover {
+    background-color: #457b9d;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 0px solid #ccc;
+    border-top: none;
+    width: 80%;
+    margin: auto;
+    background-color: #001d3d;
+}
+.container {
+    display: flex;
+    padding: 10px 25px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+.inline {
+    display: inline-block;
+}
+.tablink.selected {
+    background-color: #457b9d;
+}
+
