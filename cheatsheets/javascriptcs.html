@@ -878,6 +878,139 @@
         note that li has to be in <b>caps</b>.
     </div>
 
+    <hr>
+    <h2>Animations (CSS AND JS)</h2>
+    <hr>
+    <div class="animations">
+        <p>
+            <b>We're mainly going to talk about those animations that make elements appear when we scroll on the
+                page</b><br> They will fade in and transform up, left, or right into view. <br> <br>
+
+            <b>[CSS]</b> <br>
+            First, we need to create a few classes: <b>.animated, .active, .revealUp, .revealLeft, .revealRight</b> <br>
+            <br>
+            <b>.animated</b> - no need to change anything, we just use this to determine what needs to be animated <br>
+            <b>.active</b> - this class will be added to anything that is currently in animation <br>
+            <code>
+                .active {transform: translateY(0px); opacity: 1;}
+            </code>
+            <b>.revealUp</b> - will set the initial position at a lower pos so that it can fade upwards <br>
+            <code>
+                .revealUp {position: relative; transform: translateY(50px); opacity: 0; transition: 1s all ease;}
+            </code>
+            <b>.revealLeft</b> - same thing as .revealUp, but this time set initial pos to left <br>
+            <code>
+                .revealLeft {position: relative; transform: translateX(-50px); opacity: 0; transition: 1s all ease;}
+            </code>
+            <b>.revealRight</b> - see .revealLeft <br>
+            <code>
+                .revealRight {position: relative; transform: translateX(50px); opacity: 0; transition: 1s all ease;}
+            </code>
+            <br> <br>
+            <b>[JS]</b> <br>
+            <code>
+                function animated(){ <br>
+                &emsp;const animated = document.querySelectorAll('.animated'); <br>
+                &emsp;const windowHeight = window.innerHeight; <br>
+                &emsp;for (let i of animated) { <br>
+                    &emsp;&emsp;//find distance between element top border and top of screen <br>
+                    &emsp;&emsp;let elementTop = i.getBoundingClientRect().top; <br>
+                    &emsp;&emsp;//set how much distance elementTop and screen bottom before starting animation <br>
+                    &emsp;&emsp;let elementVisible = 100; <br>
+                    <br>
+                    &emsp;&emsp;//if element top position is higher than preset distance from screen bottom(elementVisible) <br>
+                    &emsp;&emsp;if (elementTop &lt; windowHeight - elementVisible) { <br>
+                        &emsp;&emsp;&emsp;i.classList.add('active'); <br>
+                        &emsp;&emsp;} <br>
+                        &emsp;&emsp;else {i.classList.remove('active');} <br>
+                        &emsp;} <br>
+                }
+            </code>
+            paste the code in the console if you have trouble reading. all explanations are inside ^
+        </p>
+    </div>
+
+    <hr>
+    <h2>Creating tabs</h2>
+    <hr>
+    <div class="tabs">
+        <p>
+            <b>Sometimes we want to display multiple images/info text via tabs to save the user from scrolling too
+                much</b> <br>
+            This requires application in HTML CSS and JS. <br>
+            <br>
+            <b>[JS]</b> <br>
+            <code>
+                function openTab(tabName) { <br>
+                    &emsp;    const tabContent = document.querySelectorAll('.tabcontent'); <br>
+                    &emsp;    for (let i=0; i&lt;tabContent.length;i++) {  <br>
+                        &emsp;&emsp;        tabContent[i].style.display = 'none'; //this hides all the tab elements <br>
+                        &emsp;    } <br>
+                        &emsp;    document.querySelector(`#${tabName}`).style.display = 'block'; //shows selected element <br>
+                <br>
+                        &emsp;    const tablink = document.querySelectorAll('.tablink'); <br>
+                        &emsp;    for (let i=0; i&lt;tablink.length;i++) { <br>
+                            &emsp;&emsp;        tablink[i].classList.remove('selected'); //removing selected class from all tablinks <br>
+                            &emsp;    } <br>
+                            &emsp;    document.querySelector(`.${tabName}`).classList.add('selected'); // adding selected class to the selected tablink <br>
+                }
+            </code>
+            As for <b>HTML</b>, <br>
+            <code>class="tablink tabName" onclick="openTab('tabName')'</code>
+            will be required on each of the tab buttons <br>
+            <code>id="tabName" class="tabcontent"</code>
+            will be given to each div wrapping the contents of each tab <br>
+            The adding and removing of selected classes is to highlight the selected tab in a different color <br>
+            <br>
+            <b>CSS</b>
+            <code>
+                .tab{
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                    background-color: #001d3d;
+                    width: 80%;
+                    margin: auto;
+                    display: flex;
+                    justify-content: space-evenly;
+                } <br>
+                .tab button{
+                    background-color: #001d3d;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 1em 15%;
+                    transition: 1s;
+                    font-size: 1.3em;
+                    color: white;
+                } <br>
+                .tab button:hover {
+                    background-color: #457b9d;
+                } <br>
+                .tabcontent {
+                    display: none;
+                    padding: 6px 12px;
+                    border: 0px solid #ccc;
+                    border-top: none;
+                    width: 80%;
+                    margin: auto;
+                    background-color: #001d3d;
+                } <br>
+                .container {
+                    display: flex;
+                    padding: 10px 25px;
+                    margin-bottom: 40px;
+                    align-items: center;
+                } <br>
+                .inline {
+                    display: inline-block;
+                } <br>
+                .tablink.selected {
+                    background-color: #457b9d;
+                }
+            </code>
+        </p>
+    </div>
+
     <script>
         // for stuff in list
         const listform = document.querySelector('#formprac');

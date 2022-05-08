@@ -1,16 +1,17 @@
 //fade in elements
 function animation() {
     const animated = document.querySelectorAll(".animated");
+    const windowHeight = window.innerHeight; 
   
-    for (let i = 0; i < animated.length; i++) {
-        const windowHeight = window.innerHeight;
-        let elementTop = animated[i].getBoundingClientRect().top; //finds distance between element top border and screen top
+    for (let i of animated) {
+        let elementTop = i.getBoundingClientRect().top; //finds distance between element top border and screen top
         let elementVisible = 100; //how much distance from screen bottom before animation comes in
         
         if (elementTop < windowHeight - elementVisible) { // if element top border comes above the element visible height
-            animated[i].classList.add("active");
-        } else {
-            animated[i].classList.remove("active");
+            i.classList.add("active");
+        } 
+        else {
+            i.classList.remove("active");
         }
     }
 }
