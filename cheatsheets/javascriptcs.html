@@ -1121,6 +1121,35 @@
                 &emsp;.catch(msg=>{console.log(msg)}) <br>
         </code>
     </div>
+    <div class="await">
+        <p>
+            <b>Await</b> <br>
+            await will pause execution of a function while waiting for a promise to be resolved <br>
+            await can only be used in conjunction with async functions. lets go back to our color changer thing. <br>
+            <code>
+                const delayedColorChange = (color, delay)=>{ <br>
+                    &emsp;return new Promise((resolve, reject)=>{ <br>
+                        &emsp;&emsp;setTimeout(()=>{ <br>
+                            &emsp;&emsp;&emsp;document.querySelector('body').style.backgroundColor = color; <br>
+                            &emsp;&emsp;&emsp;resolve(); <br>
+                            &emsp;&emsp;}, delay); <br>
+                            &emsp;}) <br>
+                } <br>
+                <br>
+                async function colorChange() { <br>
+                &emsp;await delayedColorChange('red', 1000); <br>
+                &emsp;await delayedColorChange('green', 1000); <br>
+                &emsp;await delayedColorChange('blue', 1000); <br>
+                &emsp;await delayedColorChange('black', 1000); <br>
+                &emsp;await delayedColorChange('white', 1000); <br>
+                }<br>
+                document.querySelector('body').style.transition = '1s all ease'; <br>
+                colorChange();
+            </code>
+            instead of using so many .then, we can just use await and call the function <br>
+            so much better tbh lol
+        </p>
+    </div>
 
     <script>
         // for stuff in list

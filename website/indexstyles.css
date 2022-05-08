@@ -281,7 +281,7 @@ span {
 p.tskill {
     text-align: left; 
     width: 25em; 
-    height: 28em;
+    height: 30em;
 }
 .submit {
     cursor: pointer;;
@@ -311,7 +311,6 @@ p.tskill {
         overflow-x: hidden; /*prevent additional whitespace on the x axis*/
     }
     .tab {
-        flex-direction: column;
         width: 95% !important;
     }
     .container {
@@ -443,7 +442,7 @@ p.tskill {
     justify-content: space-evenly;
 }
 .tab button{
-    background-color: #001d3d;
+    background-color: #3c3942;
     border: none;
     outline: none;
     cursor: pointer;
@@ -462,12 +461,11 @@ p.tskill {
     border-top: none;
     width: 80%;
     margin: auto;
-    background-color: #001d3d;
+    background-color: #6d6875;
 }
 .container {
     display: flex;
     padding: 10px 25px;
-    margin-bottom: 40px;
     align-items: center;
 }
 .inline {
@@ -476,4 +474,71 @@ p.tskill {
 .tablink.selected {
     background-color: #457b9d;
 }
+/*background colors*/
+.blue {background: #3c31dd;}
+.red {background: #dd3f31;}
+.pink {background: #855466}
+.dark {background: #0f0f10;}
+.purple {background: #7B71A1;;}
+/*svg styles*/
+.relative {position: relative;}
+.purple_wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
 
+.purple_wave svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 198px;
+}
+
+.purple_wave .shape-fill {
+    fill: #7B71A1;
+}
+/**/
+.blue_waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.blue_waves svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 204px;
+}
+
+.blue_waves .shape-fill {
+    fill: #003654;
+}
+/**/
+.pink_wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.pink_wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 116px;
+}
+
+.pink_wave .shape-fill {
+    fill: #855466;
+}
