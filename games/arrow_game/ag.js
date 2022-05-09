@@ -94,7 +94,7 @@ window.addEventListener('keydown', (e)=>{
 })
 
 
-//To warn mobile users that this game isn't compatibile with their device
+//To warn and redirect mobile users that this game isn't compatibile with their device
 if (screen.width < 500) {
     alert('Mobile device detected!\nPlease switch to a PC/Laptop for the full experience!');
     window.location.href='../../website/projects.html';
