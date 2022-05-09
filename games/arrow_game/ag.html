@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow game</title>
+    <link rel="stylesheet" href="ag.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>ARROW GAME</h1>
+        <p class="info">
+            Use arrow keys or WASD to respond to the corresponding instructions below before the time runs
+            out.
+        </p>
+        <p id="command">Press [SPACE] to begin</p>
+        <p id="gotext">Press [SPACE] to try again</p>
+        <div id="timebarRed"></div>
+        <div id="timebarGreen"></div>
+        <div class="score">
+            <p>Score: <span id="score">0</span></p>
+            <p class="highscore">Highscore: <span id="highscore">0</span></p>
+        </div>
+    </div>
+    <script src="ag.js"></script>
+</body>
+
+</html>
