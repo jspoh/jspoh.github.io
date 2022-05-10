@@ -45,7 +45,7 @@ const resetTimeBar = ()=>{timeBar.style.width = '80%';}
 
 const startTimeBar = ()=>{ //why does it increase speed? we will never know
     if (timeBar.clientWidth > 0 && playerLost === false) { //1% is 10. playerLost var is there so that it doesnt continue after player lost
-        timeBar.style.width = `${(timeBar.clientWidth - 10)/10}%`; 
+        timeBar.style.width = `${(timeBar.clientWidth - 5)/10}%`; 
         setTimeout(startTimeBar, speed); //recursion yay
     }
 }
