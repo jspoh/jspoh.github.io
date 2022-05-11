@@ -28,15 +28,27 @@
 
         @media (max-width: 1000px) {
             h1#welcomemsg {
-                font-size: 1.8em;
+                font-size: 1.5em;
                 margin-top: 350px;
             }
+        }
+
+        #skip {
+            position: absolute;
+            top: 2%;
+            right: 3%;
+            background-color: #777;
+            border-radius: 50px;
+            padding: 0.2em 0.4em;
+            font-size: 0.8em;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <h1 id="welcomemsg"></h1>
+    <h2 id="skip">Skip>></h2>
     <script src="indexscript.js"></script>
 </body>
 
