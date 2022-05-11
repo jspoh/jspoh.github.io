@@ -1151,6 +1151,39 @@
         </p>
     </div>
 
+    <div class="localstorage">
+        <p>
+            <b>localStorage</b> <br>
+            allows us to store data that will survive a page refresh, broswer restart and even an <b><em>OS
+                    RESTART</em></b>.
+            <br>
+            <code>
+                //first method <br>
+                localStorage.setItem('key', value); <br>
+                localStorage.getItem('key'); //will return the value of value <br>
+                <br>
+                //second method (better) <br>
+                localStorage.key = value; <br>
+                localStorage.key; //will return value of value <br>
+                delete localStorage.key; //will remove the key <br>
+            </code>
+            both key and values must be strings.
+            <br>
+            This is how you get the values of all storage values with a for loop <br>
+            <code>
+                for(let i=0; i&lt;localStorage.length; i++) { <br>
+                &emsp;    let key = localStorage.key(i); <br>
+                &emsp;    console.log(localStorage.getItem(key)); <br>
+                  }
+            </code> <br>
+        </p>
+        <p>
+            <b>sessionStorage</b> <br>
+            only store data within 1 tab so diff tab on same window will store diff data. <br>
+            will survive refresh, but not closing/opening the tab
+        </p>
+    </div>
+
     <script>
         // for stuff in list
         const listform = document.querySelector('#formprac');
