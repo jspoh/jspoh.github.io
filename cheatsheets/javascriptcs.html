@@ -186,7 +186,11 @@
             the count is independent to other stuff altho js is a single threaded language. so if you put 1sec. no
             matter <br>
             what, it will run the code at 1second even if theres another timeout 1sec in front of it. <br>
-            The way to get past this is to nest the timeouts in each other or just hardcode the timings
+            The way to get past this is to nest the timeouts in each other or just hardcode the timings <br>
+            <br>
+            It's important to set the setTimeout to a variable and then <b>clearTimeout(var);</b> if used in a loop or a
+            recursive function to prevent multiple instances of timeouts running at once. see arrow game script for
+            example.
         </p>
         <hr>
         <p>
