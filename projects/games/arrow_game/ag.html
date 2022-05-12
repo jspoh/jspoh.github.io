@@ -19,11 +19,19 @@
         <p id="command">Press [SPACE] to begin</p>
         <p id="gotext">Press [SPACE] to try again</p>
         <div id="timebarRed"></div>
-        <div id="timebarGreen"></div>
+        <div id="timebarGreen" style="width: 80%;">
+            <!--Reasoning for the style element here is so that javascript can use this value-->
+        </div>
         <div class="score">
             <p>Score: <span id="score">0</span></p>
             <p class="highscore">Highscore: <span id="highscore">0</span></p>
         </div>
+    </div>
+    <div id="keypad" class="flex hide">
+        <button id="up" class="keyBtn">&uarr;</button>
+        <button id="left" class="keyBtn">&larr;</button>
+        <button id="down" class="keyBtn">&darr;</button>
+        <button id="right" class="keyBtn">&rarr;</button>
     </div>
     <script src="ag.js"></script>
 </body>
