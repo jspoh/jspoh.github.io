@@ -169,6 +169,12 @@ p.topic
     width: 35%;
     text-align: center;
 }
+.med_img {
+    width: 65%;
+    display: block;
+    margin: auto;
+    border-radius: 100px;
+} 
 p.details
 {
     font-size: 1.5em;
@@ -183,6 +189,8 @@ p.details
     border: 1px solid #fcbf49;
     border-top-right-radius: 200px;
     border-bottom-left-radius: 200px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 footer
 {
@@ -224,7 +232,7 @@ p.info_text
     max-width: 100%;
     padding: 3.125em;
     margin: auto;
-    border-radius: 10%;
+    border-radius: 20px;
     
     margin-top: 2em;
 }
@@ -295,7 +303,7 @@ p.tskill {
         margin: auto;
         border-top-right-radius: 0%;
         border-bottom-left-radius: 0%;
-        border-radius: 10%;
+        border-radius: 20px;
         padding: 1em;
     }
     p.topic {
@@ -458,6 +466,8 @@ p.tskill {
     display: none;
     padding: 6px 12px;
     border: 0px solid #ccc;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     border-top: none;
     width: 80%;
     margin: auto;
