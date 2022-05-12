@@ -22,9 +22,18 @@ const displaymsg2 = () => {
     }
 }
 
+let skipBtnFadeInTimeout;
 skip.addEventListener('click', ()=>{window.location.href='website/about.html';});
+function fadeInSkipBtn() {
+    if (parseInt(skip.style.opacity) < 1) {
+        skip.style.opacity = parseFloat(skip.style.opacity) + 0.01;
+        clearTimeout(skipBtnFadeInTimeout);
+        skipBtnFadeInTimeout = setTimeout(fadeInSkipBtn, 10);
+    }
+}
+setTimeout(fadeInSkipBtn, 3000); //start fading in skip button after 3 seconds
 
-setTimeout(displaymsg1, 3000);
-setTimeout(()=>{h1.innerText=''; index=0; displaymsg2();}, 6000);
-setTimeout(()=>{h1.innerText=''; index=0;}, 10000);
-setTimeout(()=>{window.location.href='website/about.html';}, 11000);
+setTimeout(displaymsg1, 2000);
+setTimeout(()=>{h1.innerText=''; index=0; displaymsg2();}, 5000);
+setTimeout(()=>{h1.innerText=''; index=0;}, 9000);
+setTimeout(()=>{window.location.href='website/about.html';}, 10000);
