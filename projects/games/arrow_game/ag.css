@@ -127,7 +127,7 @@ div#keypad.hide {
 }
 #keypad {
     position: absolute;
-    bottom: 3vh;
+    bottom: 1vh;
     left: 12.5vw;
 
     display: flex;
