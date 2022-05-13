@@ -56,9 +56,21 @@
     </header>
     <button class="btt" id="bttButton"><a href="#top">Back to top</a></button>
 
+    <section>
+        <p class="info_text">
+            Hello, thanks for visiting my website. This page mainly features projects that I feel may benefit others in
+            terms of entertainment or productivity. For the full list and source codes of my projects, do check out my
+            <a href="https://github.com/jspoh">github</a>! I do practice leetcode/hackerrank/w3schools questions
+            when I'm not on a project but they are not on my github so do reach out if you would like to see them!
+        </p>
+    </section>
+
+    <br><br><br>
+    <hr>
+
     <section id="games">
         <h1>Games</h1>
-        <div class="projectContainer">
+        <div class="projectContainer animated revealU">
             <p class="projectTab" onclick="ocTab('#ag');">Arrow game (HTML CSS JS)<span
                     class="flushRight">&#x25BC;</span></p>
             <div id="ag" class="project hide">
@@ -116,7 +128,8 @@
 
     <section id="prac">
         <h1>Practical applications</h1>
-        <div class="projectContainer">
+        <div class="projectContainer animated revealU">
+            <!--todo-->
             <p class="projectTab" onclick="ocTab('#tdt');">To-do tracker (HTML CSS JS)<span
                     class="flushRight">&#x25BC;</span></p>
             <div id="tdt" class="project hide">
@@ -152,7 +165,7 @@
             </div>
         </div>
         <br>
-        <div class="projectContainer">
+        <div class="projectContainer animated revealU">
             <p class="projectTab" onclick="ocTab('#autoclicker');">
                 Autoclicker (Python)<span class="flushRight">&#x25BC;</span>
             </p>
@@ -179,7 +192,7 @@
             </div>
         </div>
         <br>
-        <div class="projectContainer">
+        <div class="projectContainer animated revealU">
             <p class="projectTab" onclick="ocTab('#autoemail');">
                 Automated email sender (Python)<span class="flushRight">&#x25BC;</span>
             </p>
@@ -195,7 +208,9 @@
                     <hr> <br>
                     This program will send an email to your intended recipient. Email elements such as sender, title,
                     and message are set by the user. Main feature of this program is that you can use it to schedule
-                    email messages.
+                    email messages. Please note that in order to use this, you have to turn on less secure app access
+                    for gmail or allow apps that use less secure sign in for yahoo or the equivalent for your email
+                    provider.
                     <br>
                     <br>
                     <img src="../projects/practical/auto_email/lib/main.PNG" alt="" class="curve">
