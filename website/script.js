@@ -43,3 +43,12 @@ window.onscroll = ()=>{
         bttButton.style.opacity = '0';
         }
 };
+
+//open/close drop down content in projects.html
+function ocTab(id) {
+    for (let classes of document.querySelector(id).classList) {
+        if (classes === 'hide') {document.querySelector(id).parentElement.children[0].children[0].innerHTML = '&#x25B2;';}
+        else {document.querySelector(id).parentElement.children[0].children[0].innerHTML = '&#x25BC;';} //change to arrow down
+    }
+    document.querySelector(id).classList.toggle('hide');
+}

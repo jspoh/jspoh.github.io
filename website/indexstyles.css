@@ -220,6 +220,9 @@ h2
     background-color: rgba(250, 235, 215, 0.5);
     color: rgb(169, 70, 0);
 }
+h3 {
+    text-decoration: underline;
+}
 p.info_text
 {
     text-align: center;
@@ -294,9 +297,69 @@ p.tskill {
 .submit {
     cursor: pointer;;
 }
+.curve {
+    border-radius: 20px;
+    max-width: 100%;
+}
+.project {
+    border: 1px solid #ffbe0b;
+    width: 100%;
+    padding: 3.125em;
+    border-radius: 0px 0px 20px 20px;
+    font-weight: 300;
+}
+.projectContainer {
+    border: 1px solid #ffbe0b;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 20px;
+}
+.projectTab {
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
+    position: relative;
+    border-radius: 20px;
+    transition: .4s all ease;
+}
+.projectTab:hover {
+    cursor: pointer;
+    background-color: #457b9d;
+}
+.flushRight {
+    position: absolute;
+    right: 3vw;
+    top: 40%;
+}
+.hide {
+    display: none;
+}
+.srcCode {
+    font-size: 2em;
+}
+a {
+    text-decoration: none;
+    color: rgb(107, 107, 255);
+    transition: .3s all ease;
+}
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
 
 /*responsive restructuring*/
 @media (max-width: 1500px) {
+    .projectContainer {
+        width: 95%;
+    }
+    .projectTab {
+        font-size: 1em;
+    }
+    .project {
+        padding: 1em;
+    }
     p.details {
         width: 90%;
         font-size: 1em;
@@ -329,10 +392,19 @@ p.tskill {
         width: 95% !important;
     }
     p.info_text {
-        width: 100% !important;
+        width: 90% !important;
     }
 }
 @media (max-width: 1000px) {
+    .projectContainer {
+        width: 95%;
+    }
+    .projectTab {
+        font-size: 1em;
+    }
+    .project {
+        padding: 1em;
+    }
     header {
         height: 7vh;
     }

@@ -17,9 +17,7 @@
             <!--interests, goals, strengths-->
             <div class="dropdown_content">
                 <a href="about.html#intro">Introduction</a>
-                <a href="about.html#int_sanda">Interest - Sanda kickboxing</a>
-                <a href="about.html#int_piano">Interest - Playing the piano</a>
-                <a href="about.html#int_pro">Interest - Programming</a>
+                <a href="about.html#int">Interests</a>
                 <a href="about.html#goals">Goals</a>
             </div>
         </div>
@@ -39,8 +37,7 @@
             <!--My HTMLCSSJS games, python games, automation, telegram bots etc-->
             <div class="dropdown_content">
                 <a href="projects.html#games">Games</a>
-                <a href="projects.html#auto">Automation</a>
-                <a href="projects.html#bot">Bots</a>
+                <a href="projects.html#prac">Practical applications</a>
             </div>
         </div>
         <div class="dropdown">
@@ -59,15 +56,127 @@
     </header>
     <button class="btt" id="bttButton"><a href="#top">Back to top</a></button>
 
-    <section>
+    <section id="games">
         <h1>Games</h1>
-        <p class="info_text">
-            This section is incomplete. There will only be javascript projects linked.. for now. No downloads required
-            :)
-        </p>
-        <p style="text-align: center; font-size: 2em;"><a href="../projects/games/arrow_game/ag.html">Arrow game</a></p>
-        <p style="text-align: center; font-size: 2em;"><a href="../projects/practical/todo_app/todo.html">To-do app</a>
-        </p>
+        <div class="projectContainer">
+            <p class="projectTab" onclick="ocTab('#ag');">Arrow game (HTML CSS JS)<span
+                    class="flushRight">&#x25BC;</span></p>
+            <div id="ag" class="project hide">
+                <h1>Arrow game</h1> <br>
+                <b>
+                    <a class="srcCode" href="https://github.com/jspoh/arrow_game">Source code</a> <br> <br>
+                    Click <a href='https://jspoh.github.io/projects/games/arrow_game/ag.html' target='_blank'>here</a>
+                    to play the game in your browser! <br>
+                    Available on both desktop and mobile!
+                </b>
+                <br>
+                <br>
+                <hr>
+                <br>
+                Game objective: Respond accordingly to the directional commands given before the time runs out! <br>
+                Features: <br>
+                - Easy to play, no need to install. Just visit the website! <br>
+                - Score and highscore system <br>
+
+                Fun fact: This is my first browser game!
+                <br> <br>
+                <hr>
+                <br>
+                <h3>More about this game: </h3><br>
+
+                <img class="curve" src='../projects/games/arrow_game/lib/main.PNG'> <br> <br>
+                Main starting screen <br>
+                <br> <br>
+
+                <img class="curve" src='../projects/games/arrow_game/lib/gameplay.PNG'> <br> <br>
+                This is what the gameplay looks like, you will receive arrow/text directional commands. Your goal is to
+                react accordingly to the commands within the time limit indicated by the green/red time bar. <br>
+                <br> <br>
+
+                <img class="curve" src='../projects/games/arrow_game/lib/gameover.PNG'> <br> <br>
+                This is what the gameover screen looks like. You will encounter a gameover if you choose the wrong input
+                or
+                if time runs out. <br>
+                <br> <br>
+
+                <img class="curve" src='../projects/games/arrow_game/lib/mobile.PNG'> <br> <br>
+                When accessed on mobile, keypads will appear for you to use! <br>
+                <br>
+                <hr>
+                <br>
+                Good luck, hope you have fun! <br>
+            </div>
+        </div>
+
+    </section>
+
+    <br><br><br>
+
+    <section id="prac">
+        <h1>Practical applications</h1>
+        <div class="projectContainer">
+            <p class="projectTab" onclick="ocTab('#tdt');">To-do tracker (HTML CSS JS)<span
+                    class="flushRight">&#x25BC;</span></p>
+            <div id="tdt" class="project hide">
+                <h1>To-do tracker</h1> <br>
+                <b>
+                    <a href="https://github.com/jspoh/arrow_game" class="srcCode">Source code</a> <br> <br>
+                    Available <a href="https://jspoh.github.io/projects/practical/todo_app/todo.html"
+                        target="_blank">here</a> on both desktop and mobile
+                </b> <br>
+                <b>
+                    To-do tracking list that stores data locally. So that you never lose your unclosed/undone to-do
+                    items.
+                </b>
+                <br><br>
+                <hr>
+                <br><br>
+                <img class="curve" src="../projects/practical/todo_app/lib/main.PNG" alt="Photo of the to-do app">
+                <br> <br>
+                Once items are marked as done or closed, they will no longer be retrieved if you refresh the
+                page/restart your browser/restart your OS.
+                <br>
+                If you ever want to clear all data, you may clear it from your browser or simply open up your
+                browser
+                console and entering <br>
+                <br>
+                <code>
+                    localStorage.clear()
+                </code>
+                <br>
+                <br>
+                Hope this app will be able to help you out!
+            </div>
+        </div>
+        <br>
+        <div class="projectContainer">
+            <p class="projectTab" onclick="ocTab('#autoclicker');">
+                Autoclicker (Python)<span class="flushRight">&#x25BC;</span>
+            </p>
+            <div id="autoclicker" class="project hide">
+                <h1>Autoclicker</h1> <br>
+                <b>
+                    <a href="https://github.com/jspoh/jspoh.github.io/blob/main/projects/practical/autoclicker/autoclicker.py"
+                        class="srcCode">Source code</a> <br><br>
+                    To use this program, copy the code from the link above and paste it in your IDE/Code editor <br>
+                    If you don't have any IDEs or Code editors for python, you will have to install python shell and
+                    paste the code in notepad. Change the extension to '.py'
+                </b>
+                <br> <br>
+                <hr>
+                <br>
+                <img src="../projects/practical/autoclicker/lib/main.PNG"
+                    alt="Screenshot of Pycharm console running autoclicker.py" class="curve">
+                <br> <br>
+                This is what you will see in the console when running this program. <br>
+                <br>
+                Program features: <br>
+                - 3 speed settings <br>
+                - Start/stop hotkey <br>
+                <br>
+                This program will send clicks to where-ever your moused is positioned at the moment. <br>
+            </div>
+        </div>
     </section>
 
     <footer>
