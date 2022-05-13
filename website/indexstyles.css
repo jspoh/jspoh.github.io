@@ -44,6 +44,10 @@ a.main{
 a.main:active{
     color: peachpuff;
 }
+a.main:hover {
+    text-decoration: none;
+    color: white;
+}
 .dropbtn {
     background-color: transparent;
     color: white;
@@ -344,10 +348,6 @@ a {
     text-decoration: none;
     color: rgb(107, 107, 255);
     transition: .3s all ease;
-}
-a:hover {
-    text-decoration: underline;
-    color: red;
 }
 code {
     background-color: #3c3942;

@@ -60,8 +60,13 @@
         <p class="info_text">
             Hello, thanks for visiting my website. This page mainly features projects that I feel may benefit others in
             terms of entertainment or productivity. For the full list and source codes of my projects, do check out my
-            <a href="https://github.com/jspoh">github</a>! I do practice leetcode/hackerrank/w3schools questions
-            when I'm not on a project but they are not on my github so do reach out if you would like to see them!
+            <a class="hlink" href="https://github.com/jspoh">github</a>! I do practice leetcode/hackerrank/w3schools
+            questions when I'm not on a project but they are not on my github so do reach out if you would like to see
+            them!
+            <br> <br>
+            Projects made with HTML, CSS, and JS may be opened by clicking on the links provided. <br>
+            Projects made with python may be opened only after <a href="https://www.python.org/downloads/"
+                class="hlink">installing python</a>.
         </p>
     </section>
 
@@ -76,9 +81,10 @@
             <div id="ag" class="project hide">
                 <h1>Arrow game</h1> <br>
                 <b>
-                    <a class="srcCode" target="_blank" href="https://github.com/jspoh/arrow_game">Source code</a> <br>
+                    <a class="srcCode hlink" target="_blank" href="https://github.com/jspoh/arrow_game">Source code</a>
                     <br>
-                    Click <a href='../projects/games/arrow_game/ag.html' target='_blank'>here</a>
+                    <br>
+                    Click <a href='../projects/games/arrow_game/ag.html' class="hlink" target='_blank'>here</a>
                     to play the game in your browser! <br>
                     Available on both desktop and mobile!
                 </b>
@@ -121,6 +127,33 @@
                 Good luck, hope you have fun! <br>
             </div>
         </div>
+        <br>
+        <div class="projectContainer animated revealU">
+            <p class="projectTab" onclick="ocTab('#ttt')">TicTacToe (Python)<span class="flushRight">&#x25BC;</span></p>
+            <div id="ttt" class="project hide">
+                <h1>TicTacToe</h1> <br>
+                <b>
+                    <a href="https://github.com/jspoh/jspoh.github.io/blob/main/projects/games/tictactoe/tictactoe.py"
+                        target="_blank" class="srcCode hlink">Source code</a> <br><br>
+                    To use this program, copy the code from the link above and paste it in your IDE/Code editor <br>
+                    If you don't have any IDEs or Code editors for python, you will have to install python shell and
+                    paste the code in notepad. Change the extension to '.py'
+                </b>
+                <br> <br>
+                <hr> <br>
+                This program will play the classic tictactoe game with you. It will try its best to win you or at least
+                prevent you from winning. The player may use their mouse to click on the box they'd like to select.
+                <br>
+                <br>
+                <img src="../projects/games/tictactoe/lib/main.PNG" alt="" class="curve"> <br> <br>
+                Game screen on launch <br> <br>
+                <img src="../projects//games/tictactoe/lib/gameplay.PNG" alt="" class="curve"> <br> <br>
+                This is what gameplay looks like <br><br>
+                <img src="../projects/games/tictactoe/lib/draw.PNG" alt="" class="curve"> <br><br>
+                End game screen. It can either be win, lose, or draw. The draw result screen is shown in this case.
+                <br>
+            </div>
+        </div>
 
     </section>
 
@@ -135,9 +168,11 @@
             <div id="tdt" class="project hide">
                 <h1>To-do tracker</h1> <br>
                 <b>
-                    <a href="https://github.com/jspoh/todo_tracker" target="_blank" class="srcCode">Source code</a> <br>
+                    <a href="https://github.com/jspoh/todo_tracker" target="_blank" class="srcCode hlink">Source
+                        code</a> <br>
                     <br>
-                    Available <a href="../projects/practical/todo_app/todo.html" target="_blank">here</a> on both
+                    Available <a href="../projects/practical/todo_app/todo.html" target="_blank" class="hlink">here</a>
+                    on both
                     desktop and mobile
                 </b> <br>
                 <b>
@@ -173,7 +208,7 @@
                 <h1>Auto clicker</h1> <br>
                 <b>
                     <a href="https://github.com/jspoh/jspoh.github.io/blob/main/projects/practical/autoclicker/autoclicker.py"
-                        target="_blank" class="srcCode">Source code</a> <br><br>
+                        target="_blank" class="srcCode hlink">Source code</a> <br><br>
                     To use this program, copy the code from the link above and paste it in your IDE/Code editor <br>
                     If you don't have any IDEs or Code editors for python, you will have to install python shell and
                     paste the code in notepad. Change the extension to '.py'
@@ -200,7 +235,7 @@
                 <h1>Auto email sender</h1> <br>
                 <b>
                     <a href="https://github.com/jspoh/jspoh.github.io/blob/main/projects/practical/auto_email/auto_email.py"
-                        target="_blank" class="srcCode">Source code</a> <br> <br>
+                        target="_blank" class="srcCode hlink">Source code</a> <br> <br>
                     To use this program, copy the code from the link above and paste it in your IDE/Code editor <br>
                     If you don't have any IDEs or Code editors for python, you will have to install python shell and
                     paste the code in notepad. Change the extension to '.py'
