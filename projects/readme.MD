@@ -2,6 +2,7 @@
 
 <ul>
   <li><a href='https://github.com/jspoh/arrow_game'>Arrow game</a></li>
+  <li><a href='https://github.com/jspoh/tictactoe'>TicTacToe</a></li>  
 </ul>
 
 <hr>
