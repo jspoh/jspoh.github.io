@@ -11,4 +11,5 @@
 
 <ul>
   <li><a href='https://github.com/jspoh/todo_tracker'>To-do tracker</a></li>
+  <li><a href='https://github.com/jspoh/automation'>Automation</a></li>
 </ul>
