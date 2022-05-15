@@ -10,8 +10,14 @@
 </head>
 
 <body>
-    <h1>Tic-Tac-Toe</h1>
     <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <h2>Game mode</h2>
+        <div class="start">
+            <button id="player" class="active">Player starts</button>
+            <button id="pvp">PvP</button>
+            <button id="ai">AI starts</button>
+        </div>
         <div class="bg">
             <div class="buttons">
                 <div class="btnRow1">
@@ -30,6 +36,10 @@
                     <div id="b8" class="box"></div>
                 </div>
             </div>
+        </div>
+        <div id="result">
+            <p id="retry"></p>
+            <p class="center">Re-select the starting player to retry!</p>
         </div>
     </div>
     <div class="coverup"></div>
