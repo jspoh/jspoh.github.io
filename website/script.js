@@ -1,3 +1,10 @@
+//event loop thing
+/*
+setInterval(()=>{
+    //setBgForContactPage();
+}, 100);
+*/
+
 //fade in elements
 function animation() {
     const animated = document.querySelectorAll(".animated");
@@ -52,3 +59,19 @@ function ocTab(id) {
     }
     document.querySelector(id).classList.toggle('hide');
 }
+
+//set background to image if on contact page. not in use rn
+/*
+const setBgForContactPage = ()=>{
+    if (document.title === 'Contact') {
+        //document.querySelector('body').style.backgroundImage = "url('../lib/low-poly-grid-haikei.png')";
+        document.querySelector('body').style.backgroundColor = '#748cab';
+    }
+    /*
+   else {
+       //document.querySelector('body').style.backgroundImage = 'none';
+       document.querySelector('body').style.backgroundColor = '#1c2541';
+    }
+    *
+}
+*/

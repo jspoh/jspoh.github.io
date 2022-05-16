@@ -10,10 +10,11 @@ body
    background-repeat: no-repeat;
    background-size: cover;
    */
-   background-color: #003654;
+   background-color: #343d57;
    color: #bdbdbd;
    font-family: 'Ubuntu', sans-serif;
    font-size: 16px; /*default font size*/
+   /*background-image: url('../lib/low-poly-grid-haikei.png');*/
 }
 ::selection
 {
@@ -31,7 +32,7 @@ header
     width: 100%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
 
-    background-color: #001d3d;
+    background-color: #212529;
     height: 15vh;
     align-items: center;
 }
@@ -55,6 +56,7 @@ a.main:hover {
     font-size: 1em;
     border: none;
     transition: all 1.5s ease;
+    border-radius: 10px;
 }
 
 .dropdown {
@@ -93,12 +95,12 @@ a.main:hover {
 }
 
 .dropdown:hover .dropbtn{
-    background-color: #457b9d;
+    background-color: #343a40;
     transform: scale(1.05);
     transition: all 1.5s ease;
 }
 .current{
-    background-color: #457b9d;
+    background-color: #495057;
 }
 /* end of header stuff*/
 /*back to top button*/
@@ -264,7 +266,7 @@ img.interest_pic
 .eform{
     text-align: left;
     border: 1px solid #fcbf49;
-    background-color: #118ab2;
+    background-color: lightsteelblue;
     color: black;
     font-weight: 700;
     width: fit-content;
@@ -351,6 +353,9 @@ a {
 }
 code {
     background-color: #3c3942;
+}
+.peach {
+    background-color: #d5bdaf;
 }
 
 /*responsive restructuring*/
@@ -525,6 +530,7 @@ code {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
+    border-radius: 20px 20px 0px 0px;
 }
 .tab button{
     background-color: #3c3942;
@@ -589,6 +595,26 @@ code {
     fill: #7B71A1;
 }
 /**/
+.peach_waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.peach_waves svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 204px;
+}
+
+.peach_waves .shape-fill {
+    fill: #d5bdaf;
+}
+/**/
 .blue_waves {
     position: absolute;
     top: 0;
@@ -606,7 +632,7 @@ code {
 }
 
 .blue_waves .shape-fill {
-    fill: #003654;
+    fill: #343d57;
 }
 /**/
 .pink_wave {
