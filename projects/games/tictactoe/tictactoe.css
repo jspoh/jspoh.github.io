@@ -161,4 +161,7 @@ h2 {
     h2, #retry {
         font-size: 1.3em;
     }
+    .box {
+        font-size: 55px;
+    }
 }

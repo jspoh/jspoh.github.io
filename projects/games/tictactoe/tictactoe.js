@@ -68,6 +68,7 @@ playerBtn.addEventListener('click', ()=>{
     gameTurn = 1;
     document.querySelector('#result').style.display = 'none';
     container.style.backgroundColor = 'cadetblue';
+    _ = 0;
 
     pvpBtn.classList.remove('active');
     aiBtn.classList.remove('active');
@@ -80,6 +81,7 @@ aiBtn.addEventListener('click', ()=>{
     gameTurn = 1;
     document.querySelector('#result').style.display = 'none';
     container.style.backgroundColor = 'cadetblue';
+    _ = 0;
 
     pvpBtn.classList.remove('active');
     playerBtn.classList.remove('active');
@@ -92,6 +94,7 @@ pvpBtn.addEventListener('click', ()=>{
     gameTurn = 1;
     document.querySelector('#result').style.display = 'none';
     container.style.backgroundColor = 'cadetblue';
+    _ = 0;
 
     pvpBtn.classList.add('active');
     playerBtn.classList.remove('active');
