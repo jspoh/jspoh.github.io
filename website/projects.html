@@ -262,6 +262,8 @@
                 </b>
                 <br> <br>
                 <hr> <br>
+                This program was made mainly to help automate functions in tap games such as virtual beggar.
+                <br> <br>
                 This program will start autoclicking wherever your mouse is located when the hotkey [F8] is pushed. The
                 same hotkey [F8] will stop the autoclicking. The user may choose up to 3 speed settings when using the
                 program although speed setting 1 should be fast enough for most users.
@@ -304,6 +306,58 @@
                     <br><br>
                     This is what it will look like for the recipient
                     <br>
+                </b>
+            </div>
+        </div>
+        <br>
+        <div class="projectContainer animated revealU">
+            <p class="projectTab" onclick="ocTab('#jobscraper')">
+                Jobscraper (Python)<span class="flushRight">&#x25BC;</span>
+            </p>
+            <div id="jobscraper" class="project hide">
+                <h1>Webscraper for job searching</h1>
+                <b>
+                    <a href="https://github.com/jspoh/jobscraper" target="_blank" class="srcCode hlink">Source code</a>
+                    <br> <br>
+                    To use this program, copy the code from the link above and paste it in your IDE/Code editor <br>
+                    If you don't have any IDEs or Code editors for python, you will have to install python shell and
+                    paste the code in notepad. Change the extension to '.py'
+                    <br> <br>
+                    <hr> <br>
+                    This program was made right after I finished my national service to help ease the pains of a job
+                    search.
+                    <br> <br>
+                    This program takes the front page results from top job searching websites such as: <br>
+                    - sg.indeed.com <br>
+                    - jobstreet.com.sg <br>
+                    - sg.jobsdb.com <br>
+                    - sg.linkedin.com <br>
+                    - jobscentral.com.sg <br>
+                    <br>
+                    and displays information such as: <br>
+                    - Job title <br>
+                    - Salary <br>
+                    - Location <br>
+                    - Job type <br>
+                    - Date posted <br>
+                    - Link to the original job post so that you may apply <br>
+                    <br>
+                    so that you don't have to navigate through different websites for the results. Of course, some
+                    employers may not have posted certain information such as salary, location or job type so some
+                    information fields may be unavailable.<br>
+                    <br>
+                    Some webpages are also dynamic javascript built which may complicate things as the program only
+                    captures the html document on load. Javascript elements which are loaded in after that will not be
+                    registered. This may cause problems such as missing information fields.
+                    However, restarting the program may work but the more reliable option would be to simply
+                    search for the job title in the job portal or by visiting the link provided.
+                    <br> <br>
+                    jobscraper_v2.py writes all information gathered onto a .txt document for easy reference. Here's a
+                    screenshot of the output:
+                    <br><br>
+                    <img src="../projects/practical/jobscraper/lib/result.PNG"
+                        alt="Image of jobscraper_v2.py's output on a .txt file" class="curve">
+                    <br> <br>
                 </b>
             </div>
         </div>
