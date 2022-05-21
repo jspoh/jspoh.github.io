@@ -11,7 +11,7 @@
 
 <ul>
   <li><a href='https://github.com/jspoh/todo_tracker'>To-do tracker</a></li>
-  <li><a href-'https://github.com/jspoh/automation/blob/main/autoclicker.py'>Autoclicker</a></li>
+  <li><a href='https://github.com/jspoh/automation/blob/main/autoclicker.py'>Autoclicker</a></li>
   <li><a href='https://github.com/jspoh/automation/blob/main/auto_email.py'>Auto Email</a></li>
   <li><a href='https://github.com/jspoh/jobscraper'>Jobscraper</a></li>
 </ul>
