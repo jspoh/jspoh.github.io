@@ -1,0 +1,34 @@
+body {
+    background-color: white;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+}
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid black;
+    background-color: rgb(110, 155, 214);
+    border-radius: 20px;
+    width: 740px;
+    max-width: 100%;
+    height: 510px;
+    max-height: 100%;
+    padding: 10px 20px;
+}
+.circle {
+    border: 1px solid black;
+    background-color: rgb(199, 199, 199);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    margin: 5px 15px;
+}
+.circle:hover {
+    cursor: pointer;
+}
