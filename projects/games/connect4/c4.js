@@ -8,12 +8,13 @@ for (let i=0; i<42; i++) {document.querySelector(`#c${i}`).innerText = i;}
 const allCircles = document.querySelectorAll('.circle');
 const body = document.querySelector('body');
 let board = []; for (let i=0; i<42; i++) {board.push('');}
-let winner = null;
 let gameplay = true;
+let winner = null;
 
 
 setInterval(()=>{
     updateVisuals();
+    winner = getGameStatus(board);
     if (winner !== null) {gameover();}
 }, 100)
 
@@ -26,7 +27,7 @@ for (let circle of allCircles) {
                 {board[parseInt(e.target.id.slice(1))] = 'red';} //if (_%2===1)
                 //else {board[parseInt(e.target.id.slice(1))] = 'yellow';}
 
-                getGameStatus();
+                winner = getGameStatus(board);
 
                 if (gameplay) {
                     /*
@@ -69,80 +70,153 @@ const checkIfValid = (id)=>{
 }
 
 //game status
-const getGameStatus = ()=>{
-    winner = null;
+const getGameStatus = (b)=>{
+    let status;
 
-    for (let i=41; i>38; i--) {doChecksRight(i);}
-    doChecksCenter(38);
-    for (let i=37; i>34; i--) {doChecksLeft(i)}
+    for (let i=41; i>38; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
 
-    for (let i=34; i>31; i--) {doChecksRight(i);}
-    doChecksCenter(31);
-    for (let i=30; i>27; i--) {doChecksLeft(i)}
+    status = doChecksCenter(38, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
 
-    for (let i=27; i>24; i--) {doChecksRight(i);}
-    doChecksCenter(24);
-    for (let i=23; i>20; i--) {doChecksLeft(i)}
+    for (let i=37; i>34; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
 
-    for (let i=20; i>17; i--) {doChecksRight(i);}
-    doChecksCenter(17);
-    for (let i=16; i>13; i--) {doChecksLeft(i)}
+    for (let i=34; i>31; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
 
-    for (let i=13; i>10; i--) {doChecksRight(i);}
-    doChecksCenter(10);
-    for (let i=9; i>6; i--) {doChecksLeft(i)}
+    status = doChecksCenter(31, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
 
-    for (let i=6; i>3; i--) {doChecksRight(i);}
-    doChecksCenter(3);
-    for (let i=2; i>-1; i--) {doChecksLeft(i)}
+    for (let i=30; i>27; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    for (let i=27; i>24; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    status = doChecksCenter(24, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
+
+    for (let i=23; i>20; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    for (let i=20; i>17; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    status = doChecksCenter(17, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
+
+    for (let i=16; i>13; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    for (let i=13; i>10; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    status = doChecksCenter(10, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
+
+    for (let i=9; i>6; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    for (let i=6; i>3; i--) {
+        status = doChecksRight(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
+
+    status = doChecksCenter(3, b);
+    if (status === 'player') {return 'player';}
+    else if (status === 'ai') {return 'ai';}
+
+    for (let i=2; i>-1; i--) {
+        status = doChecksLeft(i, b);
+        if (status === 'player') {return 'player';}
+        else if (status === 'ai') {return 'ai';}
+    }
 
     let count = 0;
     for (let spot of board) {
         if (spot === '') {count++;}
     }
-    if (count === 0) {winner = 'draw';}
+    if (count === 0) {return 'draw';}
+    return null;
 }
 
-const doChecksRight = (index)=>{
-    if (board[index] === 'red'){
-        if (board[index-1] === 'red' && board[index-2] === 'red' && board[index-3] === 'red') {winner = 'player';}
-        if (board[index-8] === 'red' && board[index-16] === 'red' && board[index-24] === 'red') {winner = 'player';}
-        if (board[index-7] === 'red' && board[index-14] === 'red' && board[index-21] === 'red') {winner = 'player';}
+const doChecksRight = (index, b)=>{
+    if (b[index] === 'red'){
+        if (b[index-1] === 'red' && b[index-2] === 'red' && b[index-3] === 'red') {return 'player';}
+        if (b[index-8] === 'red' && b[index-16] === 'red' && b[index-24] === 'red') {return 'player';}
+        if (b[index-7] === 'red' && b[index-14] === 'red' && b[index-21] === 'red') {return 'player';}
     }
-    if (board[index] === 'yellow'){
-        if (board[index-1] === 'yellow' && board[index-2] === 'yellow' && board[index-3] === 'yellow') {winner = 'ai';}
-        if (board[index-8] === 'yellow' && board[index-16] === 'yellow' && board[index-24] === 'yellow') {winner = 'ai';}
-        if (board[index-7] === 'yellow' && board[index-14] === 'yellow' && board[index-21] === 'yellow') {winner = 'ai';}
-    }
-}
-
-const doChecksCenter = (index)=>{
-    if (board[index] === 'red'){
-        if (board[index-1] === 'red' && board[index-2] === 'red' && board[index-3] === 'red') {winner = 'player';}
-        if (board[index+1] === 'red' && board[index+2] === 'red' && board[index+3] === 'red') {winner = 'player';}
-        if (board[index-8] === 'red' && board[index-16] === 'red' && board[index-24] === 'red') {winner = 'player';}
-        if (board[index-6] === 'red' && board[index-12] === 'red' && board[index-18] === 'red') {winner = 'player';}
-        if (board[index-7] === 'red' && board[index-14] === 'red' && board[index-21] === 'red') {winner = 'player';}
-    }
-    if (board[index] === 'yellow'){
-        if (board[index-1] === 'yellow' && board[index-2] === 'yellow' && board[index-3] === 'yellow') {winner = 'ai';}
-        if (board[index+1] === 'yellow' && board[index+2] === 'yellow' && board[index+3] === 'yellow') {winner = 'ai';}
-        if (board[index-8] === 'yellow' && board[index-16] === 'yellow' && board[index-24] === 'yellow') {winner = 'ai';}
-        if (board[index-6] === 'yellow' && board[index-12] === 'yellow' && board[index-18] === 'yellow') {winner = 'ai';}
-        if (board[index-7] === 'yellow' && board[index-14] === 'yellow' && board[index-21] === 'yellow') {winner = 'ai';}
+    if (b[index] === 'yellow'){
+        if (b[index-1] === 'yellow' && b[index-2] === 'yellow' && b[index-3] === 'yellow') {return 'ai';}
+        if (b[index-8] === 'yellow' && b[index-16] === 'yellow' && b[index-24] === 'yellow') {return 'ai';}
+        if (b[index-7] === 'yellow' && b[index-14] === 'yellow' && b[index-21] === 'yellow') {return 'ai';}
     }
 }
 
-const doChecksLeft = (index)=>{
-    if (board[index] === 'red'){
-        if (board[index+1] === 'red' && board[index+2] === 'red' && board[index+3] === 'red') {winner = 'player';}
-        if (board[index-6] === 'red' && board[index-12] === 'red' && board[index-18] === 'red') {winner = 'player';}
-        if (board[index-7] === 'red' && board[index-14] === 'red' && board[index-21] === 'red') {winner = 'player';}
+const doChecksCenter = (index, b)=>{
+    if (b[index] === 'red'){
+        if (b[index-1] === 'red' && b[index-2] === 'red' && b[index-3] === 'red') {return 'player';}
+        if (b[index+1] === 'red' && b[index+2] === 'red' && b[index+3] === 'red') {return 'player';}
+        if (b[index-8] === 'red' && b[index-16] === 'red' && b[index-24] === 'red') {return 'player';}
+        if (b[index-6] === 'red' && b[index-12] === 'red' && b[index-18] === 'red') {return 'player';}
+        if (b[index-7] === 'red' && b[index-14] === 'red' && b[index-21] === 'red') {return 'player';}
     }
-    if (board[index] === 'yellow'){
-        if (board[index+1] === 'yellow' && board[index+2] === 'yellow' && board[index+3] === 'yellow') {winner = 'ai';}
-        if (board[index-6] === 'yellow' && board[index-12] === 'yellow' && board[index-18] === 'yellow') {winner = 'ai';}
-        if (board[index-7] === 'yellow' && board[index-14] === 'yellow' && board[index-21] === 'yellow') {winner = 'ai';}
+    if (b[index] === 'yellow'){
+        if (b[index-1] === 'yellow' && b[index-2] === 'yellow' && b[index-3] === 'yellow') {return 'ai';}
+        if (b[index+1] === 'yellow' && b[index+2] === 'yellow' && b[index+3] === 'yellow') {return 'ai';}
+        if (b[index-8] === 'yellow' && b[index-16] === 'yellow' && b[index-24] === 'yellow') {return 'ai';}
+        if (b[index-6] === 'yellow' && b[index-12] === 'yellow' && b[index-18] === 'yellow') {return 'ai';}
+        if (b[index-7] === 'yellow' && b[index-14] === 'yellow' && b[index-21] === 'yellow') {return 'ai';}
+    }
+}
+
+const doChecksLeft = (index, b)=>{
+    if (b[index] === 'red'){
+        if (b[index+1] === 'red' && b[index+2] === 'red' && b[index+3] === 'red') {return 'player';}
+        if (b[index-6] === 'red' && b[index-12] === 'red' && b[index-18] === 'red') {return 'player';}
+        if (b[index-7] === 'red' && b[index-14] === 'red' && b[index-21] === 'red') {return 'player';}
+    }
+    if (b[index] === 'yellow'){
+        if (b[index+1] === 'yellow' && b[index+2] === 'yellow' && b[index+3] === 'yellow') {return 'ai';}
+        if (b[index-6] === 'yellow' && b[index-12] === 'yellow' && b[index-18] === 'yellow') {return 'ai';}
+        if (b[index-7] === 'yellow' && b[index-14] === 'yellow' && b[index-21] === 'yellow') {return 'ai';}
     }
 }
 
@@ -188,11 +262,11 @@ scoreValues = {
 };
 
 const minimax = (tempBoard, depth, isMaximizing)=>{
-    getGameStatus();
-    if (winner !== null) {
-        if (winner === 'player') {return scoreValues[winner]+depth;} //to make AI take the longest path to losing
-        else if (winner === 'ai') {return scoreValues[winner]-depth;}
-        return scoreValues[winner];
+    let tempWinner = getGameStatus(tempBoard);
+    if (tempWinner !== null) {
+        if (tempWinner === 'player') {return scoreValues[tempWinner]+depth;} //to make AI take the longest path to losing
+        else if (tempWinner === 'ai') {return scoreValues[tempWinner]-depth;}
+        return scoreValues[tempWinner];
     }
     else {
         if (isMaximizing) {
