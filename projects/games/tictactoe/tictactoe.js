@@ -229,7 +229,7 @@ function bestMove(tempBoard){
     for (let i=0; i<tempBoard.length; i++) {
         if (tempBoard[i] === '') { //if this spot is free
             tempBoard[i] = aiIcon; //check what will happen if AI selects this
-            let score = minimax(tempBoard, 0, false); //run the minimax algorithm as player
+            let score = minimax(tempBoard, false); //run the minimax algorithm as player
             tempBoard[i] = ''; //reset the spot value
             if (score > bestScore) {
                 bestScore = score;
