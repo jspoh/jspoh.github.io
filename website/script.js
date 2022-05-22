@@ -12,7 +12,7 @@ function animation() {
   
     for (let i of animated) {
         let elementTop = i.getBoundingClientRect().top; //finds distance between element top border and screen top
-        let elementVisible = 100; //how much distance from screen bottom before animation comes in
+        let elementVisible = 30; //how much distance from screen bottom before animation comes in
         
         if (elementTop < windowHeight - elementVisible) { // if element top border comes above the element visible height
             i.classList.add("active");
