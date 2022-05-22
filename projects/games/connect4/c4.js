@@ -414,7 +414,7 @@ const aiStart = ()=>{
 //for mobile devices - force zoom out
 (function zoomOutMobile() {
     if (window.innerWidth <= 660) {
-        alert('This game may be difficult to play on devices with a small screen, please consider switching to a PC/laptop for the full experience!');
+        alert('This game may be difficult to play on devices with small screens, please consider switching to a PC/laptop for the full experience!');
         console.log('resizing..');
         var viewport = document.querySelector('meta[name="viewport"]');
     
