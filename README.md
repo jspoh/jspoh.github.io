@@ -1,7 +1,7 @@
 # <a href='https://jspoh.github.io'>jspoh.github.io</a>
 
 Website still under construction.<br>
-You may visit this website at <a href="https://jspoh.github.io">jspoh.github.io</a><br>
+You may visit this website at <a href="https://jspoh.github.io">here</a><br>
 <hr>
 <a href='https://github.com/jspoh/jspoh.github.io/blob/main/projects/readme.MD'>Projects readme.MD</a>. 
 
