@@ -1,43 +1,103 @@
 //started 180522 0400. will continue after booking out of camp :")
 //220522 0000 finally back working on this
-//
+//230522 0000 finally doneee. was stuck for so long because program keeps running out of memory(presumably) and i was unaware that it was a memory issue and not a code issue.
+//230522 0213 finished adding extra options - difficulty, player/AI start
 
 //show grid numbers
-for (let i=0; i<42; i++) {document.querySelector(`#c${i}`).innerText = i;}
+//for (let i=0; i<42; i++) {document.querySelector(`#c${i}`).innerText = i;}
 
 const allCircles = document.querySelectorAll('.circle');
 const body = document.querySelector('body');
-let board = []; for (let i=0; i<42; i++) {board.push('');}
+let board = []; 
+const boardRefresh = ()=>{board = []; for (let i=0; i<42; i++) {board.push('');}}; boardRefresh();
 let gameplay = true;
 let winner = null;
+let maxSearches = 3; //easy: 3 med: 5 hard: 8
 
 
 setInterval(()=>{
-    updateVisuals();
     winner = getGameStatus(board);
     if (winner !== null) {gameover();}
 }, 100)
 
-//let _ = 1;
-let forcedFirstMove = 0;
+const easyBtn = document.querySelector('#easy');
+const medBtn = document.querySelector('#medium');
+const hardBtn = document.querySelector('#hard');
+
+easyBtn.addEventListener('click', ()=>{
+    easyBtn.classList.add('active');
+    medBtn.classList.remove('active');
+    hardBtn.classList.remove('active');
+
+    maxSearches = 3;
+    boardRefresh();
+    updateVisuals();
+    body.style.backgroundColor = 'rgb(52, 60, 64)';
+
+    if (aiStartBtn.classList[1] === 'active') {aiStart();}
+})
+
+medBtn.addEventListener('click', ()=>{
+    easyBtn.classList.remove('active');
+    medBtn.classList.add('active');
+    hardBtn.classList.remove('active');
+
+    maxSearches = 5;
+    boardRefresh();
+    updateVisuals();
+    body.style.backgroundColor = 'rgb(52, 60, 64)';
+
+    if (aiStartBtn.classList[1] === 'active') {aiStart();}
+})
+
+hardBtn.addEventListener('click', ()=>{
+    easyBtn.classList.remove('active');
+    medBtn.classList.remove('active');
+    hardBtn.classList.add('active');
+
+    maxSearches = 8;
+    boardRefresh();
+    updateVisuals();
+    body.style.backgroundColor = 'rgb(52, 60, 64)';
+
+    if (aiStartBtn.classList[1] === 'active') {aiStart();}
+})
+
+const playerStartBtn = document.querySelector('#playerStart');
+const aiStartBtn = document.querySelector('#aiStart');
+
+playerStartBtn.addEventListener('click', ()=>{
+    playerStartBtn.classList.add('active');
+    aiStartBtn.classList.remove('active');
+
+    boardRefresh();
+    updateVisuals();
+    body.style.backgroundColor = 'rgb(52, 60, 64)';
+})
+
+aiStartBtn.addEventListener('click', ()=>{
+    playerStartBtn.classList.remove('active');
+    aiStartBtn.classList.add('active');
+
+    boardRefresh();
+    updateVisuals();
+
+    aiStart();
+    body.style.backgroundColor = 'rgb(52, 60, 64)';
+})
+
 for (let circle of allCircles) {
     circle.addEventListener('click', (e)=>{
         if (gameplay) {
             if (checkIfValid(e.target.id)) {
-                {board[parseInt(e.target.id.slice(1))] = 'red';} //if (_%2===1)
-                //else {board[parseInt(e.target.id.slice(1))] = 'yellow';}
+                unhighlight();
+                {board[parseInt(e.target.id.slice(1))] = 'red';}
 
+                updateVisuals();
                 winner = getGameStatus(board);
 
                 if (gameplay) {
-                    /*
-                    if (forcedFirstMove === 0) {
-                        if (board[38] === '') {board[38] = 'yellow'; forcedFirstMove++;}
-                        else {aiMove(board);}
-                    }
-                    else {aiMove(board);}
-                    */
-                    aiMove(board);
+                    setTimeout(()=>{aiMove(board);}, 0); //setTimeout to allow updateVisuals() changes to be seen. tbh idk why also
                 }
             }
         }
@@ -47,6 +107,7 @@ for (let circle of allCircles) {
 const updateVisuals = ()=>{
     for (let i=0; i<board.length; i++) {
         if (board[i] !== '') {document.querySelector(`#c${i}`).style.backgroundColor = board[i];}
+        else {document.querySelector(`#c${i}`).style.backgroundColor = 'rgb(78, 78, 78)';}
     }
 }
 
@@ -228,67 +289,98 @@ const gameover = ()=>{
 }
 //end of game status
 
-//ai move
+//highlight valid moves
 let validMoves = [];
-const aiMove = (tempBoard)=>{
+const refreshValidMoves = (b)=>{
     validMoves = [];
-    for (let i=0; i<board.length; i++) {
+    for (let i=0; i<b.length; i++) {
         if (i===41||i===40||i===39||i===38||i===37||i===36||i===35) {
-            if (board[i] === '') {validMoves.push(i);}
+            if (b[i] === '') {validMoves.push(i);}
         }
-        if (board[i] !== '' && board[i-7] === '') {validMoves.push(i-7);} //do not put else if or 2nd last row will be bugged
+        if (b[i] !== '' && b[i-7] === '') {validMoves.push(i-7);} //do not put else if or 2nd last row will be bugged
     }
-    
+};
+refreshValidMoves(board);
+
+const highlightValidMoves = ()=>{
+    for (let index of validMoves) {document.querySelector(`#c${index}`).classList.add('highlight');}
+};
+highlightValidMoves();
+
+const unhighlight = ()=>{
+    for (let i of document.querySelectorAll('.highlight')) {i.classList.remove('highlight');}
+};
+
+//ai move
+const aiMove = (tempBoard)=>{
     let bestMove;
     let bestScore = -Infinity;
-    for (let spot of validMoves){
-        tempBoard[spot] = 'yellow';
-        let score = minimax(tempBoard, 0, false);
-        console.log(score, spot)
-        tempBoard[spot] = '';
-        if (score >= bestScore) { //>= to prevent undefined moves 
-            bestScore = score;
-            bestMove = spot;
+    for (let i=0; i<tempBoard.length; i++){
+        if (i>34 && i<42 || tempBoard[i+7] !== '') { //if move is valid
+            if (tempBoard[i] === '') { //if spot is free
+                tempBoard[i] = 'yellow';
+                let score = minimax(tempBoard, 0, false, -Infinity, Infinity);
+                console.log(score, i)
+                tempBoard[i] = '';
+                if (score > bestScore) { //>= to prevent undefined moves 
+                    bestScore = score;
+                    bestMove = i;
+                }
+            }
         }
     }
     board[bestMove] = 'yellow';
+    updateVisuals();
     console.log(`Last move by AI: ${bestMove}`);
+    refreshValidMoves(board);
+    highlightValidMoves();
 }
 
-scoreValues = {
+const scoreValues = {
     'player': -100,
     'draw': 0,
     'ai': 100
 };
 
-const minimax = (tempBoard, depth, isMaximizing)=>{
+const minimax = (tempBoard, depth, isMaximizing, alpha, beta)=>{
     let tempWinner = getGameStatus(tempBoard);
-    if (tempWinner !== null) {
+    if (tempWinner !== null || depth === maxSearches) { //depth for how many moves ahead u want to search for 
         if (tempWinner === 'player') {return scoreValues[tempWinner]+depth;} //to make AI take the longest path to losing
         else if (tempWinner === 'ai') {return scoreValues[tempWinner]-depth;}
-        return scoreValues[tempWinner];
+        else if (tempWinner === 'draw') {return scoreValues[tempWinner];}
+        else {return 0;}
     }
     else {
         if (isMaximizing) {
             let maxScore = -Infinity;
-            for (let spot of validMoves) {
-                if (tempBoard[spot] === '') {
-                    tempBoard[spot] = 'yellow';
-                    let score1 = minimax(tempBoard, depth+1, false);
-                    tempBoard[spot] = '';
-                    maxScore = Math.max(score1, maxScore);
+            for (let i=0; i<tempBoard.length; i++){
+                if (i>34 && i<42 || tempBoard[i+7] !== '') {
+                    if (tempBoard[i] === '') {
+                        tempBoard[i] = 'yellow';
+                        let score1 = minimax(tempBoard, depth+1, false, alpha, beta);
+                        tempBoard[i] = '';
+                        maxScore = Math.max(score1, maxScore);
+                        //ab pruning
+                        alpha = Math.max(alpha, score1);
+                        if (beta <= alpha) {break;}
+                    }
                 }
             }
             return maxScore;
         }
         else {
             let minScore = Infinity;
-            for (let spot of validMoves) {
-                if (tempBoard[spot] === '') {
-                    tempBoard[spot] = 'red';
-                    let score2 = minimax(tempBoard, depth+1, true);
-                    tempBoard[spot] = '';
+            for (let i=0; i<tempBoard.length; i++){
+                if (i>34 && i<42 || tempBoard[i+7] !== '') {
+                    if (tempBoard[i] === '') {
+                    tempBoard[i] = 'red';
+                    let score2 = minimax(tempBoard, depth+1, true, alpha, beta);
+                    tempBoard[i] = '';
                     minScore = Math.min(score2, minScore);
+                    //ab pruning
+                    beta = Math.min(beta, score2);
+                    if (beta <= alpha) {break;}
+                    }
                 }
             }
             return minScore;
@@ -297,4 +389,9 @@ const minimax = (tempBoard, depth, isMaximizing)=>{
 }
 
 //ai starts first
-//aiMove(board);
+const aiStart = ()=>{
+    board[38] = 'yellow';
+    updateVisuals();
+    refreshValidMoves(board);
+    highlightValidMoves();
+};
