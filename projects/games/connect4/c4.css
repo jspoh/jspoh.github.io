@@ -86,9 +86,17 @@ body {
     justify-content: space-between;
     align-items: baseline;
 }
+.info {
+    width: max-content;
+    margin: 10px auto 0px auto;
+}
 
 @media (max-width: 660px) {
     .title {
+        width: 650px;
+        text-align: center;
+    }
+    .info {
         width: 650px;
         text-align: center;
     }
