@@ -86,3 +86,10 @@ body {
     justify-content: space-between;
     align-items: baseline;
 }
+
+@media (max-width: 660px) {
+    .title {
+        width: 650px;
+        text-align: center;
+    }
+}

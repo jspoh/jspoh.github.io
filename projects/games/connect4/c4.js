@@ -33,6 +33,9 @@ easyBtn.addEventListener('click', ()=>{
     boardRefresh();
     updateVisuals();
     body.style.backgroundColor = 'rgb(52, 60, 64)';
+    gameplay = true;
+    refreshValidMoves(board);
+    highlightValidMoves();
 
     if (aiStartBtn.classList[1] === 'active') {aiStart();}
 })
@@ -46,6 +49,9 @@ medBtn.addEventListener('click', ()=>{
     boardRefresh();
     updateVisuals();
     body.style.backgroundColor = 'rgb(52, 60, 64)';
+    gameplay = true;
+    refreshValidMoves(board);
+    highlightValidMoves();
 
     if (aiStartBtn.classList[1] === 'active') {aiStart();}
 })
@@ -59,6 +65,9 @@ hardBtn.addEventListener('click', ()=>{
     boardRefresh();
     updateVisuals();
     body.style.backgroundColor = 'rgb(52, 60, 64)';
+    gameplay = true;
+    refreshValidMoves(board);
+    highlightValidMoves();
 
     if (aiStartBtn.classList[1] === 'active') {aiStart();}
 })
@@ -73,6 +82,9 @@ playerStartBtn.addEventListener('click', ()=>{
     boardRefresh();
     updateVisuals();
     body.style.backgroundColor = 'rgb(52, 60, 64)';
+    gameplay = true;
+    refreshValidMoves(board);
+    highlightValidMoves();
 })
 
 aiStartBtn.addEventListener('click', ()=>{
@@ -84,6 +96,9 @@ aiStartBtn.addEventListener('click', ()=>{
 
     aiStart();
     body.style.backgroundColor = 'rgb(52, 60, 64)';
+    gameplay = true;
+    refreshValidMoves(board);
+    highlightValidMoves();
 })
 
 for (let circle of allCircles) {
@@ -395,3 +410,17 @@ const aiStart = ()=>{
     refreshValidMoves(board);
     highlightValidMoves();
 };
+
+//for mobile devices - force zoom out
+(function zoomOutMobile() {
+    if (window.innerWidth <= 660) {
+        alert('This game may be difficult to play on devices with a small screen, please consider switching to a PC/laptop for the full experience!');
+        console.log('resizing..');
+        var viewport = document.querySelector('meta[name="viewport"]');
+    
+        if ( viewport ) {
+        viewport.content = "initial-scale=0.1";
+        viewport.content = "width=660";
+        }
+    }
+})();
