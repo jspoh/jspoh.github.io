@@ -298,7 +298,7 @@ span {
 p.tskill {
     text-align: left; 
     width: 25em; 
-    height: 30em;
+    height: 15em;
 }
 .submit {
     cursor: pointer;;
@@ -356,6 +356,13 @@ code {
 }
 .peach {
     background-color: #d5bdaf;
+}
+.smaller {
+    font-size: 0.8em;
+}
+.highlight {
+    width: fit-content;
+    background-color: rgba(196, 196, 0, 0.5);
 }
 
 /*responsive restructuring*/

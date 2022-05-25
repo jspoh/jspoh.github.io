@@ -43,7 +43,9 @@ const gameOver = ()=>{
     document.querySelector('#gotext').style.display = 'flex';
     randNum = -1;
     keypad.classList.add('hide'); //hide keys after gameover to prevent accidental restarts
-    setTimeout(()=>{keypad.classList.remove('hide');}, 1000); //reinstate keys 1second after gameover
+    if (screen.width < 821) {
+        setTimeout(()=>{keypad.classList.remove('hide');}, 1000); //reinstate keys 1second after gameover
+    }
     resetTimeBar();
 }
 
