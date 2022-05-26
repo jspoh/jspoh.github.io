@@ -29,9 +29,9 @@ window.addEventListener("scroll", animation);
 function openTab(tabName) {
     const tabContent = document.querySelectorAll('.tabcontent');
     for (let i=0; i<tabContent.length;i++) { 
-        tabContent[i].style.display = 'none'; //this hides all the tab elements
+        tabContent[i].classList.add('hide'); //this hides all the tab elements
     }
-    document.querySelector(`#${tabName}`).style.display = 'block'; //shows selected element
+    document.querySelector(`#${tabName}`).classList.remove('hide'); //shows selected element
 
     const tablink = document.querySelectorAll('.tablink');
     for (let i=0; i<tablink.length;i++) {

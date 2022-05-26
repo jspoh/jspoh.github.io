@@ -22,14 +22,17 @@ body
 }
 
 /* HEADER STYLES*/
-header
+header {
+    background-color: #212529;
+}
+nav
 {
     /*position: sticky;
     top: 0px;*/
 
     display: flex;
     justify-content: space-around;
-    width: 100%; /*to use up more of the center space*/
+    width: 90%; /*to use up more of the center space*/
     margin: auto; /*re-center it*/
 
     background-color: #212529;
@@ -341,7 +344,7 @@ p.tskill {
     top: 40%;
 }
 .hide {
-    display: none;
+    display: none !important;
 }
 .srcCode {
     font-size: 2em;
@@ -363,6 +366,18 @@ code {
 .highlight {
     width: fit-content;
     background-color: rgba(196, 196, 0, 0.5);
+}
+.iconWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: auto;
+}
+img.icon {
+    width: 80px;
+}
+.iconContainer {
+    text-align: center;
 }
 
 /*responsive restructuring*/
@@ -421,7 +436,7 @@ code {
     .project {
         padding: 1em;
     }
-    header {
+    nav {
         height: 7vh;
     }
     a.main {
@@ -552,7 +567,7 @@ code {
     background-color: #457b9d;
 }
 .tabcontent {
-    display: none;
+    display: block;
     padding: 6px 12px;
     border: 0px solid #ccc;
     border-bottom-left-radius: 20px;

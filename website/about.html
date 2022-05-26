@@ -15,48 +15,50 @@
 
 <body>
     <header>
-        <div class="dropdown">
-            <button class="dropbtn current"><a class="main" href="about.html">About</a></button>
-            <!--interests, goals, strengths-->
-            <div class="dropdown_content">
-                <a href="about.html#intro">Introduction</a>
-                <a href="about.html#int">Interests</a>
-                <a href="about.html#goals">Goals</a>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn current"><a class="main" href="about.html">About</a></button>
+                <!--interests, goals, strengths-->
+                <div class="dropdown_content">
+                    <a href="about.html#intro">Introduction</a>
+                    <a href="about.html#int">Interests</a>
+                    <a href="about.html#goals">Goals</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"><a class="main" href="proficiencies.html">Proficiencies</a></button>
-            <!--Education, work exp, certifications, strengths-->
-            <div class="dropdown_content">
-                <a href="proficiencies.html#edu">Education</a>
-                <a href="proficiencies.html#exp">Work experience</a>
-                <a href="proficiencies.html#cert">Professional certifications</a>
-                <a href="proficiencies.html#skills">Skills</a>
-                <a href="proficiencies.html#str">Strengths</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a class="main" href="proficiencies.html">Proficiencies</a></button>
+                <!--Education, work exp, certifications, strengths-->
+                <div class="dropdown_content">
+                    <a href="proficiencies.html#edu">Education</a>
+                    <a href="proficiencies.html#exp">Work experience</a>
+                    <a href="proficiencies.html#cert">Professional certifications</a>
+                    <a href="proficiencies.html#skills">Skills</a>
+                    <a href="proficiencies.html#str">Strengths</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"><a class="main" href="projects.html">Projects</a></button>
-            <!--My HTMLCSSJS games, python games, automation, telegram bots etc-->
-            <div class="dropdown_content">
-                <a href="projects.html#games">Games</a>
-                <a href="projects.html#prac">Practical applications</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a class="main" href="projects.html">Projects</a></button>
+                <!--My HTMLCSSJS games, python games, automation, telegram bots etc-->
+                <div class="dropdown_content">
+                    <a href="projects.html#games">Games</a>
+                    <a href="projects.html#prac">Practical applications</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"><a class="main" href="resume.html">eResume</a></button>
-            <div class="dropdown_content">
-                <a href="rawresume.html" target="_blank">View raw</a>
-                <a href="testimonials.html">Recommendations & Testimonials</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a class="main" href="testimonials.html">eResume</a></button>
+                <div class="dropdown_content">
+                    <a href="testimonials.html">Recommendations & Testimonials</a>
+                    <a href="resume.html" target="_blank">View resume</a>
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn"><a class="main" href="contact.html">Contact</a></button>
-            <div class="dropdown_content">
-                <a href="contact.html">Email</a>
-                <a href="https://linkedin.com/in/js-poh" target="_blank">Linkedin</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a class="main" href="contact.html">Contact</a></button>
+                <div class="dropdown_content">
+                    <a href="contact.html">Email</a>
+                    <a href="https://linkedin.com/in/js-poh" target="_blank">Linkedin</a>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <button class="btt" id="bttButton"><a href="#top">Back to top</a></button>
@@ -110,15 +112,17 @@
         <h1 class="cursive animated revealU" id="int">Interests</h1>
 
         <div class="tab animated revealU">
-            <button class="tablink int_sanda" onclick="openTab('int_sanda');">Kickboxing</button>
+            <button class="tablink int_sanda selected" onclick="openTab('int_sanda');">Kickboxing</button>
             <button class="tablink int_piano" onclick="openTab('int_piano');">Piano</button>
             <button class="tablink int_pro" onclick="openTab('int_pro');">Programming</button>
         </div>
+        <!--
         <div id="defaultTab animated revealU" class="tabcontent" style="display: block; padding: 2em 0em;">
             <p class="info_text animated revealU" style="margin: auto; width: 50%;">
                 Click on any of the above tabs to learn more about my interests!
             </p>
         </div>
+        -->
         <div id="int_sanda" class="tabcontent">
             <div class="container">
                 <p style="margin: auto;">
@@ -140,7 +144,7 @@
                 </p>
             </div>
         </div>
-        <div id="int_piano" class="tabcontent">
+        <div id="int_piano" class="tabcontent hide">
             <div class="container">
                 <p>
                     <img class="interest_pic" src="../lib/piano.jpg" alt="A picture of JS playing the piano">
@@ -158,7 +162,7 @@
                 </p>
             </div>
         </div>
-        <div id="int_pro" class="tabcontent">
+        <div id="int_pro" class="tabcontent hide">
             <div class="container">
                 <p><img class="interest_pic" src="../lib/programming.PNG" alt="Image of programming fundamentals"></p>
                 <p class="info_text"><strong>How it started</strong><br><br>My entry point into coding
