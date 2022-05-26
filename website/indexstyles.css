@@ -205,6 +205,12 @@ footer
 {
     margin-top: 6.25em;
     background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.footerRight {
+    position: absolute;
+    left: 150px;
+    bottom: 35px;
 }
 footer a img
 {

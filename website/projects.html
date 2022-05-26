@@ -8,13 +8,22 @@
     <title>Projects</title>
     <link rel="stylesheet" href="indexstyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P36J421GPW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P36J421GPW');
+    </script>
 </head>
 
 <body>
     <header>
         <nav>
             <div class="dropdown">
-                <button class="dropbtn current"><a class="main" href="about.html">About</a></button>
+                <button class="dropbtn"><a class="main" href="about.html">About</a></button>
                 <!--interests, goals, strengths-->
                 <div class="dropdown_content">
                     <a href="about.html#intro">Introduction</a>
@@ -34,7 +43,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn"><a class="main" href="projects.html">Projects</a></button>
+                <button class="dropbtn current"><a class="main" href="projects.html">Projects</a></button>
                 <!--My HTMLCSSJS games, python games, automation, telegram bots etc-->
                 <div class="dropdown_content">
                     <a href="projects.html#games">Games</a>
@@ -473,6 +482,7 @@
                 <img style="width: 4.8em;" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"
                     alt="Github"></a>
         </div>
+        <div class="footerRight"><a href="credits.html" class="hlink">Credits</a></div>
     </footer>
     <script src="script.js"></script>
 </body>
