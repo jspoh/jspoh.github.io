@@ -374,13 +374,15 @@ code {
     background-color: rgba(196, 196, 0, 0.5);
 }
 .iconWrapper {
+    /*
     display: flex;
     justify-content: space-between;
     width: 250px;
+    */
     margin: auto;
 }
 img.icon {
-    width: 80px;
+    width: 85px;
 }
 .iconContainer {
     text-align: center;
