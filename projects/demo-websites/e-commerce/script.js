@@ -276,28 +276,46 @@ let country;
 let address;
 let paymentType;
 
-document.querySelector('#checkoutForm').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    fName = document.querySelector('#fname').value;
-    lName = document.querySelector('#lname').value;
-    country = document.querySelector('#country').value;
-    address = document.querySelector('#address').value;
-    paymentType = document.querySelector('#paymentType').value;
+try {
+    document.querySelector('#checkoutForm').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        fName = document.querySelector('#fname').value;
+        lName = document.querySelector('#lname').value;
+        country = document.querySelector('#country').value;
+        address = document.querySelector('#address').value;
+        paymentType = document.querySelector('#paymentType').value;
 
-    try {
-        let cartCost = 0;
-        let cartContent = [];
-        for (let i=0;i<cartItems.length;i++) {
-            cartCost += parseInt(cartItems[i][1]);
-            cartContent.push(`${i+1}. ${cartItems[i][0]}`);
+        if (cartItems.length !== 0) {
+            try {
+                let cartCost = 0;
+                let cartContent = [];
+                for (let i=0;i<cartItems.length;i++) {
+                    cartCost += parseInt(cartItems[i][1]);
+                    cartContent.push(`${i+1}. ${cartItems[i][0]}`);
+                }
+                cartContent = cartContent.join().replaceAll(',','<br>');
+
+                document.querySelector('#checkoutList').innerHTML = cartContent;
+                document.querySelector('#checkoutPayment').innerHTML = `$${cartCost} has been charged to your ${paymentType}.`;
+                document.querySelector('#deliveryAddress').innerHTML = `${fName} ${lName}<br>${address}, ${country}`;
+
+                document.querySelector('#modalbg').classList.remove('noDisplay');
+
+                console.log(`Checkout success!\n\nYou have paid $${cartCost} via ${paymentType} and purchased the following item(s):\n${cartContent}\n\nDelivery instructions:\n${fName} ${lName}\n${address}, ${country}`)
+                
+                cartItems = [];
+                localStorage.cartItems = undefined;
+            }
+            catch (error) {}
         }
-        cartContent = cartContent.join().replaceAll(',','\n');
+        else {alert('Your cart is empty!');}
+    })
+}
+catch (error) {}
 
-        alert(`Checkout success!\n\nYou have paid $${cartCost} via ${paymentType} and purchased the following item(s):\n${cartContent}\n\nDelivery instructions:\n${fName} ${lName}\n${address}, ${country}`)
-        
-        cartItems = [];
-        localStorage.cartItems = undefined;
-        window.location.reload();
-    }
-    catch (error) {}
+try {
+document.querySelector('#modalbg').addEventListener('click', (e)=>{
+    window.location.reload();
 })
+}
+catch (error) {}

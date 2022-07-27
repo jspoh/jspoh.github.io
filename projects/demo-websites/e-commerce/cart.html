@@ -66,16 +66,16 @@
             </ul>
         </div>
         <form action="" id="checkoutForm">
-            <h1 class="checkoutTitle">Billing address</h1>
+            <h1 class="checkoutTitle">Billing details</h1>
             <div class="formContent">
                 <input type="text" placeholder="First name" id="fname" name="fname" required>
-                <input type="text" name="lname" id="lname" placeholder="Smith" required>
-                <input type="text" name="country" id="country" placeholder="Singapore" required>
-                <input type="text" name="address" id="address" placeholder="21 Ang Mo Kio st 57" required>
+                <input type="text" name="lname" id="lname" placeholder="Last name" required>
+                <input type="text" name="country" id="country" placeholder="Country" required>
+                <input type="text" name="address" id="address" placeholder="Delivery address" required>
                 <select name="paymentType" id="paymentType" required>
                     <option value="">Select your payment type</option>
                     <option value="visa">VISA</option>
-                    <option value="master">MASTERCARD</option>
+                    <option value="mastercard">MASTERCARD</option>
                     <option value="amex">AMERICAN EXPRESS</option>
                     <option value="netsqr">NETS QR</option>
                 </select>
@@ -84,8 +84,26 @@
                     I agree to the terms and conditions
                 </label>
             </div>
-            <button id="checkoutBtn" type="submit">Check out</button>
+            <button id="checkoutBtn" type="submit" value="submit">Check out</button>
         </form>
+    </div>
+
+    <!--modal-->
+    <div class="noDisplay" id="modalbg">
+        <div class="modal">
+            <h1 class="modalTitle">Checkout successful!</h1>
+            <p class="modalText1">You have purchased the following items:</p>
+            <br>
+            <p id="checkoutList" class="modalText2"></p>
+            <br> <br>
+            <p class="modalText1">The items will be delivered to:</p>
+            <br>
+            <p id="deliveryAddress" class="modalText2"></p>
+            <br> <br>
+            <p id="checkoutPayment" class="modalText1"></p>
+            <br> <br> <br> <br> <br>
+            <span class="closeText">Click outside the box to continue</span>
+        </div>
     </div>
 
     <hr>
