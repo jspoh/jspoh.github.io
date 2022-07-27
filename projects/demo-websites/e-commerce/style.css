@@ -357,3 +357,18 @@ div.iconWrapper {
     transform: translateX(0px);
     transition: ease all 1s;
 }
+@media (max-width: 600px) {
+    .intro {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 370px) {
+    .intro {
+        font-size: 0.5em;
+    }
+}
+
+/* safari stuff??? */
+a {
+    color: black;
+}
