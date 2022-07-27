@@ -112,7 +112,9 @@ for (let i=0; i<totalCards; i++) {
             cartItems.push([cartItemName, cartItemPrice]);
             localStorage.cartItems = cartItems;
 
+            console.log(`#product${i}carted`)
             document.querySelector(`#product${i}cart`).classList.add('noDisplay');
+            console.log(`#product${i}carted`)
             document.querySelector(`#product${i}carted`).classList.remove('noDisplay');
         })
         /*remove*/

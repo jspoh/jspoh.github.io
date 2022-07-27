@@ -62,7 +62,7 @@ button.nav {
     width: 100px;
 }
 button.nav:hover{
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid rgb(246, 246, 246);
     transition: ease all 0.5s;
     cursor: pointer;
 }
@@ -232,7 +232,7 @@ button.shop:hover {
     padding: 0px 10px;
 }
 .productInfoTitle {
-    font-size: 3em;
+    font-size: 2em;
 }
 .productInfoPrice {
     font-size: 1.5em;
