@@ -17,6 +17,8 @@
   <li><a href='https://github.com/jspoh/jobscraper'>Jobscraper</a></li>
 </ul>
 
+<hr>
+
 # Website demonstrations
 
 <ul>
