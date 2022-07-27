@@ -338,6 +338,7 @@ div.iconWrapper {
 
     position: fixed;
     top: 10vh;
+    height: 100vh;
 
     background-color: rgb(173, 103, 24);
     opacity: 0;
@@ -346,10 +347,10 @@ div.iconWrapper {
 }
 .mdd {
     width: 100vw;
-    height: 18vh;
+    height: 15vh;
     background: transparent;
     border: none;
-    border-top: 1px solid black;
+    border-bottom: 0.5px solid black;
 }
 .mddActive {
     opacity: 100;
