@@ -16,3 +16,9 @@
   <li><a href='https://github.com/jspoh/automation/blob/main/auto_email.py'>Auto Email</a></li>
   <li><a href='https://github.com/jspoh/jobscraper'>Jobscraper</a></li>
 </ul>
+
+# Website demonstrations
+
+<ul>
+  <li><a href='https://github.com/jspoh/ecommerce-demo'>E-commerce website demo</a></li>
+</ul>
