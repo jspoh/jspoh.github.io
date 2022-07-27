@@ -337,7 +337,7 @@ div.iconWrapper {
     flex-direction: column;
 
     position: fixed;
-    bottom: 0px;
+    top: 10vh;
 
     background-color: rgb(173, 103, 24);
     opacity: 0;
