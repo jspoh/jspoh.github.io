@@ -263,8 +263,13 @@ div.iconWrapper {
 }
 
 /* liked items page */
-#likedItemsList, #cartItemsList {
+#likedItemsList, .totalCost {
     width: 1000px;
+    max-width: 100%;
+    margin: auto;
+}
+#cartItemsList {
+    width: 600px;
     max-width: 100%;
     margin: auto;
 }
@@ -324,6 +329,38 @@ div.iconWrapper {
     background-color: rgb(255, 207, 119);
     cursor: pointer;
     transition: ease all 0.3s;
+}
+
+/* cart checkout*/
+.cartWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.cartContainer {
+    width: 600px;
+    max-width: 100%;
+}
+.checkoutTitle {
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: 4vh;
+}
+.formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35vh;
+}
+#checkoutForm {
+    width: 400px;
+}
+#agree, #agreeLabel {
+    display: inline;
+    width: max-content;
 }
 
 /* mobile compatibility */

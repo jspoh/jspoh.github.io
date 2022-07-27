@@ -176,6 +176,7 @@ catch (error) {}
 try {
     /* adding items to cart page */
     const ulCart = document.querySelector('#cartItemsList');
+    let totalCost = 0;
 
     for (let i=0;i<cartItems.length;i++) {
         const newLi = document.createElement('li');
@@ -193,7 +194,10 @@ try {
         newLi.append(newSpan);
 
         ulCart.append(newLi);   
+
+        totalCost += parseInt(cartItems[i][1]);
     }
+    document.querySelector('#totalCost').innerText = `$${totalCost}`;
 }
 catch (error) {}
 
@@ -226,6 +230,7 @@ for (let li of allLi) {
 }
 
 /* checkout */
+/*
 try {
     document.querySelector('#checkoutBtn').addEventListener('click', (e)=>{
         let cartCost = 0;
@@ -243,7 +248,7 @@ try {
         window.location.reload();
     })
 }
-catch (typeerror) {console.log(typeerror);}
+catch (typeerror) {console.log(typeerror);}*/
 
 /* mobile compatibility */
 const checkScreenWidth = ()=>{
@@ -262,4 +267,37 @@ checkScreenWidth();
 const mddBtn = document.querySelector('#menuBtn');
 mddBtn.addEventListener('click', ()=>{
     document.querySelector('.mddContainer').classList.toggle('mddActive');
+})
+
+/* checkout form */
+let fName;
+let lName;
+let country; 
+let address;
+let paymentType;
+
+document.querySelector('#checkoutForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    fName = document.querySelector('#fname').value;
+    lName = document.querySelector('#lname').value;
+    country = document.querySelector('#country').value;
+    address = document.querySelector('#address').value;
+    paymentType = document.querySelector('#paymentType').value;
+
+    try {
+        let cartCost = 0;
+        let cartContent = [];
+        for (let i=0;i<cartItems.length;i++) {
+            cartCost += parseInt(cartItems[i][1]);
+            cartContent.push(`${i+1}. ${cartItems[i][0]}`);
+        }
+        cartContent = cartContent.join().replaceAll(',','\n');
+
+        alert(`Checkout success!\n\nYou have paid $${cartCost} via ${paymentType} and purchased the following item(s):\n${cartContent}\n\nDelivery instructions:\n${fName} ${lName}\n${address}, ${country}`)
+        
+        cartItems = [];
+        localStorage.cartItems = undefined;
+        window.location.reload();
+    }
+    catch (error) {}
 })

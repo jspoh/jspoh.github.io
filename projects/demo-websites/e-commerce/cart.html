@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View liked items</title>
+    <title>View cart</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@300&display=swap"
         rel="stylesheet">
@@ -50,16 +50,46 @@
     </header>
 
     <h1 class="topic">Items in cart</h1>
-    <ul id="cartItemsList">
+    <div class="cartWrapper">
+        <div class="cartContainer">
+            <ul id="cartItemsList">
+                <li class="doneList0">
+                    <p class="likedTitle0">Item</p>
+                    <span class="likedTitle0">Price</span>
+                </li>
+            </ul>
+            <ul class="totalCost">
+                <li class="doneList0">
+                    <p class="likedTitle0">Total</p>
+                    <span class="likedTitle0" id="totalCost">$0</span>
+                </li>
+            </ul>
+        </div>
+        <form action="" id="checkoutForm">
+            <h1 class="checkoutTitle">Billing address</h1>
+            <div class="formContent">
+                <input type="text" placeholder="First name" id="fname" name="fname" required>
+                <input type="text" name="lname" id="lname" placeholder="Smith" required>
+                <input type="text" name="country" id="country" placeholder="Singapore" required>
+                <input type="text" name="address" id="address" placeholder="21 Ang Mo Kio st 57" required>
+                <select name="paymentType" id="paymentType" required>
+                    <option value="">Select your payment type</option>
+                    <option value="visa">VISA</option>
+                    <option value="master">MASTERCARD</option>
+                    <option value="amex">AMERICAN EXPRESS</option>
+                    <option value="netsqr">NETS QR</option>
+                </select>
+                <label for="agree" id="agreeLabel">
+                    <input type="checkbox" name="agree" id="agree" required>
+                    I agree to the terms and conditions
+                </label>
+            </div>
+            <button id="checkoutBtn" type="submit">Check out</button>
+        </form>
+    </div>
 
-        <li class="doneList0">
-            <p class="likedTitle0">Item</p>
-            <span class="likedTitle0">Price</span>
-        </li>
-
-    </ul>
-
-    <button id="checkoutBtn">Check out</button>
+    <hr>
+    <div class="space"></div>
 
     <script src="script.js"></script>
 </body>
