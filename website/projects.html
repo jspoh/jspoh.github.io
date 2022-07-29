@@ -48,6 +48,7 @@
                 <div class="dropdown_content">
                     <a href="projects.html#games">Games</a>
                     <a href="projects.html#prac">Practical applications</a>
+                    <a href="projects.html#demo">Website demonstrations</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -468,6 +469,86 @@
                         <br><br>
                         <img src="../projects/practical/jobscraper/lib/telebot_searchall.PNG" alt="" class="curve">
                     </b>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <section id="demo">
+        <h1>Website demonstrations</h1>
+        <div class="animated revealU">
+            <div class="projectContainer">
+                <!--ecommerce-->
+                <p class="projectTab" onclick="ocTab('#ecp');">Simple E-commerce page (HTML CSS JS)<span
+                        class="flushRight">&#x25BC;</span></p>
+                <div id="ecp" class="project hide">
+                    <h1>Simple E-commerce page</h1> <br>
+                    <b>
+                        <a href="https://github.com/jspoh/ecommerce-demo" target="_blank" class="srcCode hlink">Source
+                            code</a> <br>
+                        <br>
+                        Available <a href="../projects/demo-websites/e-commerce/products.html" target="_blank"
+                            class="hlink">here</a> on both desktop and mobile
+                    </b> <br>
+                    <b>
+                        E-commerce demo site built with vanilla html css js. <br> Resources may be referenced <a
+                            href="../projects/demo-websites/e-commerce/credits.html" target="_blank"
+                            class="hlink">here</a>
+                    </b>
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <img class="curve" src="../projects/demo-websites/e-commerce/lib/homepage.PNG"
+                        alt="Photo of the landing page">
+                    <br> <br>
+                    This is the main landing page. The user may scroll/use arrow keys to snap to the next section.
+                    <br> <br>
+                    <img src="../projects/demo-websites/e-commerce/lib/guitarpage.PNG"
+                        alt="photo of guitar product page" class="curve">
+                    <br><br>
+                    When hovering over the category tab, a pop-up menu will appear - prompting the user to select a type
+                    of item to view. This screenshot shows the page when the guitar product option is selected.
+                    <br><br>
+                    The white heart will turn red when clicked on and will add the related item to the liked items list.
+                    The cart with a plus sign will add the item selected into the user's cart when clicked on while
+                    changing the plus sign to a cross. The cart with the cross sign can be clicked on to remove the item
+                    from cart.
+                    <br><br>
+                    On hover, the product card will expand and show more information for a quick overview as shown on
+                    the leftmost product card. I did not build individual pages for the products.
+                    <br><br>
+                    <img src="../projects/demo-websites/e-commerce/lib/likedpage.PNG" alt="img of liked page"
+                        class="curve">
+                    <br><br>
+                    This page consolidates the user's liked items. The user may click on any of the listed items to go
+                    back to the product page to view the item in order to remove it from liked items or to add to cart.
+                    <br><br>
+                    <img src="../projects/demo-websites/e-commerce/lib/cartpage.PNG" alt="img of cart page"
+                        class="curve">
+                    <br><br>
+                    This page consolidates the user's cart items and also allows the user to checkout their cart. All
+                    fields must be filled and the cart must not be empty in order to check out successfully.
+                    <br><br>
+                    <img src="../projects/demo-websites/e-commerce/lib/checkoutmodalpage.PNG"
+                        alt="img of checkout popup" class="curve">
+                    <br><br>
+                    Upon checking out, this modal will pop up to give the user a summary. A version will be logged in
+                    the console as well.
+                    <br><br>
+                    The user's cart information will be wiped upon checking out successfully.
+                    <br><br>
+                    <img src="../projects/demo-websites/e-commerce/lib/consolelocalstorage.PNG" alt="img of console"
+                        class="curve">
+                    <br><br>
+                    All liked/cart items are saved to the localStorage so that the data may survive page refreshes and
+                    even the os rebooting. The user will have to enter <code>localStorage.clear()</code> into the
+                    console or clear their browser's memory to delete this data.
+                    <br>
+                    <br>
+                    In the event where the localStorage data is not cleared, this website will always show the most
+                    updated liked items list and products in cart.
                 </div>
             </div>
         </div>
